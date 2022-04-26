@@ -1,9 +1,0 @@
-@use '@styles/global/extends' as *;
-
-.main {
-	position: relative;
-
-	img {
-		@extend .full-image;
-	}
-}
