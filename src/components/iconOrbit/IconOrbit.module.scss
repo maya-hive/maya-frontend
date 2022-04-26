@@ -1,0 +1,53 @@
+@use '@styles/config/variables' as var;
+
+.main {
+	$Atom-radius: 23px;
+	$Electron-radius: 7px;
+	$border-width: 8px;
+	$border-color: var.$primary-color;
+
+	@mixin circle($radius) {
+		border-radius: 50%;
+		width: $radius * 2;
+		height: $radius * 2;
+	}
+
+	.orbit2D {
+		top: calc($Atom-radius - $Electron-radius - 6px);
+		left: $Atom-radius - calc($Electron-radius + 8px);
+	}
+
+	.orbit3D {
+		top: $Atom-radius - $Electron-radius;
+		left: $Atom-radius - $Electron-radius;
+	}
+
+	display: inline-block;
+
+	.orbit {
+		@include circle($Atom-radius);
+		position: relative;
+		border: solid $border-width $border-color;
+	}
+
+	.electron {
+		@include circle($Electron-radius + 1px);
+		position: absolute;
+		background-color: var.$on-primary-color;
+		animation: rotate 2.5s infinite linear;
+
+		@extend .orbit2D;
+	}
+
+	@keyframes rotate {
+		0% {
+			transform: rotateZ(0deg) translateX($Atom-radius);
+			top: 9px;
+		}
+
+		100% {
+			transform: rotateZ(360deg) translateX($Atom-radius);
+			top: 9px;
+		}
+	}
+}

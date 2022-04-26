@@ -1,0 +1,146 @@
+@use '@styles/config/variables' as var;
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	@extend .center-spacing;
+	overflow-x: hidden;
+
+	.containerWrapper {
+		position: relative;
+
+		.imgWrapper {
+			padding-top: 100%;
+
+			@include xlScreen {
+				padding-top: 140%;
+			}
+
+			img {
+				object-fit: scale-down;
+
+				@include xlScreen {
+					object-fit: contain;
+				}
+			}
+		}
+
+		.content {
+			display: flex;
+			align-items: center;
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			z-index: 1;
+			position: absolute;
+
+			@include xsScreen {
+				margin-top: 20px;
+				position: unset;
+			}
+
+			@include smScreen {
+				margin-top: 20px;
+				position: unset;
+			}
+
+			@include mdScreen {
+				position: unset;
+			}
+
+			@include lgScreen {
+				position: unset;
+			}
+
+			@include xlScreen {
+				margin-left: 40px;
+			}
+		}
+	}
+}
+
+.sliderTrack {
+	color: var.$primary-nutral-color;
+	filter: brightness(180%);
+	position: relative;
+
+	@include xsScreen {
+		top: -40px;
+	}
+
+	@include smScreen {
+		top: -850px;
+	}
+
+	@include mdScreen {
+		top: -550px;
+	}
+
+	@include lgScreen {
+		top: -525px;
+	}
+
+	@include xlScreen {
+		top: -600px;
+	}
+
+	span {
+		font-size: 200px;
+		text-transform: uppercase;
+		font-weight: 700;
+		line-height: 100%;
+
+		@include xsScreen {
+			font-size: 70px;
+		}
+
+		@include smScreen {
+			font-size: 100px;
+		}
+
+		@include mdScreen {
+			font-size: 140px;
+		}
+
+		@include lgScreen {
+			font-size: 120px;
+		}
+	}
+}
+
+.textSliderLeft {
+	position: absolute;
+	top: 50px;
+	left: -300px;
+
+	@include xsScreen {
+		top: -680px;
+		left: -200px;
+	}
+
+	@include mdScreen {
+		top: -250px;
+	}
+
+	@include lgScreen {
+		top: 180px;
+	}
+}
+
+.textSliderRight {
+	position: absolute;
+	top: 280px;
+	right: 0;
+
+	@include xsScreen {
+		top: -500px;
+	}
+
+	@include mdScreen {
+		top: 0px;
+	}
+
+	@include lgScreen {
+		top: 350px;
+	}
+}

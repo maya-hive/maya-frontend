@@ -1,0 +1,25 @@
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	font-weight: 700;
+	font-size: 28px;
+
+	p {
+		font-weight: 700;
+	}
+
+	&:first-letter {
+		text-transform: capitalize;
+	}
+
+	@extend .emphasize;
+
+	@include xsScreen {
+		font-size: 19px;
+	}
+
+	@include smScreen {
+		font-size: 21px;
+	}
+}

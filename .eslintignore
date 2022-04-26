@@ -1,0 +1,6 @@
+# Nextjs files
+next.config.js
+.next/
+
+# Compiled files
+build/

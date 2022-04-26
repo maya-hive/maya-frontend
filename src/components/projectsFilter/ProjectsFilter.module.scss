@@ -1,0 +1,155 @@
+@use '@styles/config/variables' as var;
+@use '@styles/config/functions' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	margin: 150px 0 50px;
+
+	@include xsScreen {
+		margin: 50px 0 0;
+	}
+
+	@include smScreen {
+		margin-bottom: 0;
+	}
+
+	@include mdScreen {
+		margin-bottom: 0;
+	}
+
+	.headline {
+		@include xsScreen {
+			font-size: 48px;
+			line-height: 52px;
+		}
+
+		@include smScreen {
+			font-size: 56px;
+			line-height: 62px;
+		}
+	}
+
+	.subtitle {
+		margin-top: 50px;
+		font-size: 21px;
+
+		margin-bottom: 90px;
+
+		@include smScreen {
+			margin-bottom: 60px;
+		}
+	}
+
+	.mediaWrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.saturnImg {
+			animation: floatingSaturn 6s ease-in-out infinite;
+			max-width: 140px;
+
+			@include lgScreen {
+				max-width: 100px;
+			}
+		}
+
+		.mascotImg {
+			animation: mascotFreestyle 6s linear infinite;
+			max-width: 400px;
+			margin-bottom: 100px;
+
+			@include xsScreen {
+				max-width: 280px;
+			}
+
+			@include lgScreen {
+				max-width: 200px;
+			}
+
+			@include xlScreen {
+				max-width: 100%;
+				margin-bottom: unset;
+			}
+		}
+	}
+
+	.buttonRow {
+		.button {
+			margin-right: 12px;
+			margin-bottom: 15px;
+			color: var.$secondary-nutral-color-variant;
+			background-color: var.$secondary-background-color;
+			font-size: 13px;
+			text-transform: none;
+
+			span {
+				padding: 10px 24px;
+				pointer-events: none;
+
+				@include xsScreen {
+					padding: 10px 10px;
+				}
+			}
+
+			@include xsScreen {
+				margin-right: 4px;
+				margin-bottom: 8px;
+			}
+
+			@include mdScreen {
+				margin-right: 10px;
+				margin-bottom: 10px;
+			}
+
+			&::after,
+			&::before {
+				background: var.$secondary-color;
+			}
+		}
+	}
+}
+
+@keyframes floatingSaturn {
+	0% {
+		transform: translate(0%, 0%);
+	}
+
+	25% {
+		transform: translate(-10px, 15px);
+	}
+
+	50% {
+		transform: translate(-10px, -15px);
+	}
+
+	75% {
+		transform: translate(10px, 15px);
+	}
+
+	100% {
+		transform: translate(0%, 0%);
+	}
+}
+
+@keyframes mascotFreestyle {
+	0% {
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+
+	25% {
+		transform: translate(10px, -15px) rotate(10deg);
+	}
+
+	50% {
+		transform: translate(10px, 15px) rotate(0deg);
+	}
+
+	75% {
+		transform: translate(-10px, 15px) rotate(-5deg);
+	}
+
+	100% {
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+}

@@ -1,0 +1,167 @@
+[
+	{
+		"size": "0.5",
+		"xAxis": "10",
+		"yAxis": "-5"
+	},
+	{
+		"size": "1",
+		"xAxis": "15",
+		"yAxis": "10"
+	},
+	{
+		"size": "0.8",
+		"xAxis": "20",
+		"yAxis": "-6"
+	},
+	{
+		"size": "1",
+		"xAxis": "26",
+		"yAxis": "11"
+	},
+	{
+		"size": "1",
+		"xAxis": "30",
+		"yAxis": "30"
+	},
+	{
+		"size": "1",
+		"xAxis": "35",
+		"yAxis": "1"
+	},
+	{
+		"size": "0.7",
+		"xAxis": "37",
+		"yAxis": "19"
+	},
+	{
+		"size": "0.7",
+		"xAxis": "43",
+		"yAxis": "10"
+	},
+	{
+		"size": "0.8",
+		"xAxis": "40",
+		"yAxis": "34"
+	},
+	{
+		"size": "1",
+		"xAxis": "-10",
+		"yAxis": "34"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "-36",
+		"yAxis": "42"
+	},
+	{
+		"size": "0.7",
+		"xAxis": "-14",
+		"yAxis": "1"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "-22",
+		"yAxis": "5"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "-27",
+		"yAxis": "-5"
+	},
+	{
+		"size": "1",
+		"xAxis": "-35",
+		"yAxis": "1"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "-40",
+		"yAxis": "-11"
+	},
+	{
+		"size": "0.5",
+		"xAxis": "-44",
+		"yAxis": "-1"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "-46",
+		"yAxis": "18"
+	},
+	{
+		"size": "0.8",
+		"xAxis": "10",
+		"yAxis": "40"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "-12",
+		"yAxis": "16"
+	},
+	{
+		"size": "1",
+		"xAxis": "-42",
+		"yAxis": "32"
+	},
+	{
+		"size": "0.8",
+		"xAxis": "-37",
+		"yAxis": "18"
+	},
+	{
+		"size": "0.5",
+		"xAxis": "-42",
+		"yAxis": "10"
+	},
+	{
+		"size": "0.7",
+		"xAxis": "-20",
+		"yAxis": "38"
+	},
+	{
+		"size": "1",
+		"xAxis": "-30",
+		"yAxis": "30"
+	},
+	{
+		"size": "0.8",
+		"xAxis": "-20",
+		"yAxis": "-10"
+	},
+	{
+		"size": "0.8",
+		"xAxis": "-28",
+		"yAxis": "12"
+	},
+	{
+		"size": "1.0",
+		"xAxis": "-20",
+		"yAxis": "20"
+	},
+	{
+		"size": "0.5",
+		"xAxis": "28",
+		"yAxis": "-7"
+	},
+	{
+		"size": "0.5",
+		"xAxis": "10",
+		"yAxis": "22"
+	},
+	{
+		"size": "0.6",
+		"xAxis": "23",
+		"yAxis": "40"
+	},
+	{
+		"size": "1",
+		"xAxis": "18",
+		"yAxis": "28"
+	},
+	{
+		"size": "1",
+		"xAxis": "15",
+		"yAxis": "20"
+	}
+]

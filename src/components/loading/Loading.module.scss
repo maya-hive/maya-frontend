@@ -1,0 +1,85 @@
+@use '@styles/config/variables' as var;
+@use '@styles/config/functions' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: darken(var.$secondary-surface-color, 8%);
+	z-index: z('on-header');
+
+	.animWrap {
+		width: 100px;
+		height: 100px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-25px);
+
+		@include xsScreen {
+			transform: translate(-40%) scale(0.7);
+		}
+
+		@include smScreen {
+			transform: translate(-40%) scale(0.8);
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			background: var.$on-background-color;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			animation: wave-animate 4s ease-out infinite;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			background: var.$on-background-color;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			opacity: 0;
+			-webkit-animation: wave-animate 4s ease-out 1.5s infinite;
+			animation: wave-animate 4s ease-out 1.5s infinite;
+		}
+
+		.logoWrap {
+			box-shadow: 1px 9px 31px 21px var.$primary-color-variant;
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			transform: scale(3);
+			z-index: 1;
+			animation: logo-fade 1s ease-out;
+		}
+	}
+}
+
+@keyframes logo-fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes wave-animate {
+	0% {
+		transform: scale(3);
+		opacity: 1;
+		transform-origin: center;
+	}
+	to {
+		transform: scale(10);
+		opacity: 0;
+		transform-origin: center;
+	}
+}

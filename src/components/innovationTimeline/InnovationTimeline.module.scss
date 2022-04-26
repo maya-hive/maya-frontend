@@ -1,0 +1,52 @@
+@use '@styles/config/variables' as var;
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	padding: 120px 0 250px;
+	overflow: hidden;
+
+	@include xsScreen {
+		padding: 50px 0 0px;
+	}
+
+	@include smScreen {
+		padding: 50px 0 350px;
+	}
+
+	overflow-x: clip;
+	position: relative;
+	width: 100%;
+
+	.headline {
+		text-align: center;
+	}
+
+	.row {
+		display: flex;
+		position: relative;
+		min-height: 500px;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		margin-top: 360px;
+
+		@include xsScreen {
+			flex-direction: column;
+			align-items: unset;
+			margin-top: 80px;
+		}
+
+		@include smScreen {
+			flex-direction: column;
+			align-items: unset;
+			margin-top: 80px;
+		}
+
+		@include mdScreen {
+			flex-direction: column;
+			align-items: unset;
+			margin-top: 120px;
+		}
+	}
+}

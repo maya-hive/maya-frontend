@@ -1,0 +1,35 @@
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	font-size: 72px;
+	font-weight: 900;
+	margin: 0 0 12px;
+	line-height: 70px;
+
+	@extend .text-outline;
+
+	@include xsScreen {
+		font-size: 54px;
+
+		line-height: 65px;
+
+		p {
+			line-height: 65px;
+		}
+	}
+
+	@include smScreen {
+		font-size: 62px;
+
+		line-height: 75px;
+
+		p {
+			line-height: 75px;
+		}
+	}
+
+	@include mdScreen {
+		font-size: 68px;
+	}
+}

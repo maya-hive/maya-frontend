@@ -1,0 +1,26 @@
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	@extend .center-spacing;
+
+	.projectsRow {
+		column-gap: 16px;
+
+		@include xlScreen {
+			column-count: 3;
+		}
+
+		@include lgScreen {
+			column-count: 3;
+		}
+
+		@include mdScreen {
+			column-count: 2;
+		}
+
+		@include smScreen {
+			column-count: 1;
+		}
+	}
+}

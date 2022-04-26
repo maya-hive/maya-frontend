@@ -1,0 +1,241 @@
+@use '@styles/config/variables' as var;
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	padding: 150px 0 150px;
+	color: var.$on-secondary-color;
+
+	@include xsScreen {
+		padding: 100px 0 0px;
+	}
+
+	address {
+		margin-bottom: 70px;
+
+		@include lgScreen {
+			margin-bottom: 0;
+		}
+		@include xlScreen {
+			margin-bottom: 0;
+		}
+
+		ul {
+			list-style-type: none;
+			padding-left: 0;
+		}
+
+		a {
+			text-decoration: none;
+			color: var.$on-secondary-color;
+			font-weight: 600;
+
+			&:hover {
+				color: var.$primary-color;
+			}
+		}
+
+		h3 {
+			color: var.$primary-nutral-color;
+			font-size: 14px;
+			font-weight: bolder;
+			text-transform: capitalize;
+			margin-bottom: 5px;
+		}
+
+		.animWrap {
+			position: relative;
+			overflow-x: clip;
+
+			.mascot {
+				position: absolute;
+				padding-top: 120px;
+				margin-left: auto;
+				margin-right: 140px;
+				width: 140px;
+				top: -75px;
+				right: -82px;
+
+				@media (max-width: 1200px) {
+					display: none;
+				}
+
+				.helmet,
+				.body {
+					object-fit: contain;
+				}
+
+				.helmet {
+					top: 0;
+					position: absolute;
+					height: 70%;
+					z-index: 1;
+				}
+
+				.body {
+					top: 60px;
+				}
+			}
+
+			img {
+				@extend .full-image;
+			}
+
+			.bg {
+				object-fit: contain;
+				z-index: -1;
+				right: -120px;
+				left: unset;
+				top: -150px;
+				height: 350%;
+			}
+
+			.headline {
+				font-size: 92px;
+				font-weight: 800;
+				line-height: 1;
+				margin-bottom: 20px;
+
+				@include xsScreen {
+					font-size: 62px;
+				}
+
+				strong {
+					color: var.$primary-color;
+				}
+			}
+		}
+
+		.overline {
+			margin-bottom: 0;
+		}
+
+		.cta {
+			font-size: 42px;
+			font-weight: 300;
+			color: var.$on-background-color;
+			margin-bottom: 80px;
+
+			@include xsScreen {
+				font-size: 22px;
+			}
+
+			@include smScreen {
+				font-size: 28px;
+			}
+		}
+
+		.address,
+		.telephone,
+		.email {
+			width: fit-content;
+		}
+
+		.address {
+			content: '';
+		}
+
+		.telephone {
+			li {
+				margin-bottom: 8px;
+			}
+		}
+
+		.email {
+			ul {
+				margin-bottom: 0;
+				padding-left: 0;
+				display: flex;
+				list-style: none;
+				font-weight: bold;
+
+				:not(:last-child) {
+					margin-right: 20px;
+				}
+
+				a {
+					display: inline-block;
+				}
+
+				li:not(:first-child)::before {
+					content: '|';
+					position: relative;
+					top: 0;
+					left: -10px;
+				}
+			}
+		}
+
+		.socials {
+			display: flex;
+			margin-top: 40px;
+			list-style: none;
+
+			.button {
+				font-size: 22px;
+				width: 65px;
+				height: 65px;
+				border: 2px solid var.$on-secondary-color;
+
+				@include xsScreen {
+					width: 50px;
+					height: 50px;
+				}
+
+				span {
+					height: 100%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				@include smScreen {
+					width: 50px;
+					height: 50px;
+					font-size: 15px;
+				}
+
+				@include mdScreen {
+					width: 50px;
+					height: 50px;
+					font-size: 14px;
+				}
+
+				@include lgScreen {
+					width: 60px;
+					height: 60px;
+					font-size: 18px;
+				}
+
+				&:before {
+					background-color: var.$background-color;
+				}
+
+				&:first-child {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+
+	.form {
+		.headline {
+			h2 {
+				color: var.$on-background-color;
+				font-size: 108px;
+				font-weight: 900;
+				line-height: 1;
+
+				strong {
+					color: var.$primary-color;
+				}
+			}
+		}
+
+		.submit {
+			margin-top: 50px;
+			width: 100%;
+			padding: 12px 34px;
+		}
+	}
+}

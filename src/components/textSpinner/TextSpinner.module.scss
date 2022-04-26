@@ -1,0 +1,60 @@
+@use '@styles/config/variables' as var;
+@use '@styles/global/extends' as *;
+
+.main {
+	position: relative;
+	height: 125px;
+	width: 125px;
+
+	&::before {
+		content: '';
+		background-color: var.$primary-color;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		width: 0;
+		height: 0;
+		border-radius: 100%;
+		transition: all 200ms ease-out 0s;
+	}
+
+	&:hover {
+		&::before {
+			height: 50%;
+			width: 50%;
+		}
+	}
+
+	svg {
+		padding: 0;
+		background: none;
+		-webkit-clip-path: circle(40% at 50% 50%);
+		clip-path: circle(40% at 50% 50%);
+
+		text {
+			@extend .no-select;
+			font-size: 32px;
+			text-transform: uppercase;
+			font-weight: bold;
+			animation: rotateIt 7s linear infinite;
+			transform-origin: center;
+
+			&.primary {
+				fill: var.$secondary-color;
+			}
+
+			&.secondary {
+				fill: var.$on-secondary-color;
+			}
+		}
+	}
+}
+
+@keyframes rotateIt {
+	to {
+		transform: rotate(-360deg);
+	}
+}

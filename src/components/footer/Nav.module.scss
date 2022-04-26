@@ -1,0 +1,231 @@
+@use '@styles/config/variables' as var;
+@use '@styles/global/extends' as *;
+@use '@styles/config/functions' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	color: var.$on-background-color;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	@include xsScreen {
+		text-align: center;
+	}
+
+	h3 {
+		font-size: 28px;
+		font-weight: bolder;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+
+	ul {
+		list-style: none;
+		font-weight: 700;
+		padding-left: 0;
+	}
+
+	.topWrapper {
+		flex: 1 1 auto;
+
+		.wrapperInner {
+			display: flex;
+			justify-content: space-between;
+
+			@include xsScreen {
+				flex-direction: column;
+			}
+
+			@include mdScreen {
+				flex-direction: column;
+			}
+
+			@include lgScreen {
+				flex-direction: column;
+			}
+
+			.links {
+				a {
+					width: fit-content;
+
+					@include xsScreen {
+						width: unset;
+					}
+				}
+
+				min-width: 200px;
+
+				@include xsScreen {
+					min-width: 45%;
+				}
+
+				@include lgScreen {
+					min-width: 60%;
+				}
+
+				li {
+					padding: 0 0 20px;
+				}
+			}
+		}
+
+		.animationController {
+			width: 100%;
+			position: relative;
+
+			.imgWrapper {
+				transition: all 2s ease;
+				animation: float 6s ease-in-out infinite;
+				top: 50vh;
+				z-index: z('modal');
+				width: 100%;
+				max-width: 185px;
+				min-width: 100px;
+
+				@include xsScreen {
+					margin: auto;
+					left: 30%;
+				}
+
+				@include smScreen {
+					max-width: 180px;
+				}
+
+				@include mdScreen {
+					max-width: 180px;
+					margin-bottom: 50px;
+				}
+
+				@include lgScreen {
+					max-width: 180px;
+					margin-bottom: 50px;
+				}
+
+				.imgWrapperInner {
+					position: relative;
+
+					img:first-of-type {
+						@extend .full-image;
+						object-fit: contain;
+						object-position: top;
+						position: relative;
+						transition: all 250ms ease-out;
+					}
+
+					:is(.speechBubble) {
+						position: unset;
+
+						img {
+							position: absolute;
+							top: 20%;
+							bottom: 0;
+							right: 0;
+							left: 80%;
+							margin: auto;
+							width: 0;
+							height: 0;
+							transform: rotate(4deg);
+							opacity: 0;
+						}
+					}
+
+					&:hover {
+						:is(.speechBubble) {
+							img {
+								width: 50%;
+								height: 50%;
+								opacity: 1;
+							}
+						}
+					}
+
+					&:active {
+						:is(.speechBubble) {
+							img {
+								opacity: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.socials {
+		display: flex;
+		margin-bottom: 0;
+
+		@include xsScreen {
+			margin: auto;
+		}
+
+		li {
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+		}
+
+		.button {
+			font-size: 22px;
+			width: 65px;
+			height: 65px;
+			border: 2px solid var.$on-secondary-color;
+
+			span {
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			@include xsScreen {
+				margin-top: 20px;
+			}
+
+			@include smScreen {
+				width: 50px;
+				height: 50px;
+				font-size: 15px;
+			}
+
+			@include mdScreen {
+				width: 50px;
+				height: 50px;
+				font-size: 14px;
+			}
+
+			@include lgScreen {
+				width: 60px;
+				height: 60px;
+				font-size: 18px;
+			}
+
+			&:before {
+				background-color: var.$background-color;
+			}
+		}
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+
+	25% {
+		transform: translate(8px, 15px) rotate(5deg);
+	}
+
+	50% {
+		transform: translate(-10px, -10px) rotate(8deg);
+	}
+
+	75% {
+		transform: translate(5px, 10px) rotate(2deg);
+	}
+
+	100% {
+		transform: translate(0%, 0%) rotate(0deg);
+	}
+}
