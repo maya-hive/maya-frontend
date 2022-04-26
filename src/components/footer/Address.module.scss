@@ -1,0 +1,60 @@
+@use '@styles/config/variables' as var;
+@use '@styles/config/mixins' as *;
+
+.main {
+	color: var.$on-background-color;
+	padding: 0 0 0 20px;
+
+	@include xsScreen {
+		padding: 0 0 20px 0;
+		text-align: center;
+	}
+
+	@include smScreen {
+		padding: 0 0 20px 0;
+	}
+
+	a {
+		&:hover {
+			color: var.$primary-color;
+		}
+	}
+
+	h3 {
+		font-size: 28px;
+		font-weight: bolder;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+	}
+
+	h4 {
+		color: var.$secondary-nutral-color-variant;
+		font-size: 14px;
+		font-weight: bolder;
+		text-transform: capitalize;
+		margin-bottom: 5px;
+	}
+
+	ul {
+		list-style: none;
+		line-height: 26px;
+		padding-left: 0;
+		font-weight: 500;
+		font-size: 15px;
+		margin-bottom: 35px;
+
+		li {
+			width: fit-content;
+
+			@include xsScreen {
+				width: unset;
+			}
+		}
+	}
+
+	p {
+		line-height: 26px;
+		font-size: 15px;
+		font-weight: 500;
+	}
+}

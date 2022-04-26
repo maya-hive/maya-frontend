@@ -1,0 +1,154 @@
+@use '@styles/config/variables' as var;
+@use '@styles/global/extends' as *;
+@use '@styles/config/mixins' as *;
+
+.main {
+	display: flex;
+	position: relative;
+	overflow-x: clip;
+
+	@extend .center-spacing;
+
+	.mainInner {
+		min-height: 400px;
+	}
+
+	.contentContainer {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		@include xsScreen {
+			text-align: center;
+		}
+		@include smScreen {
+			margin-top: 30px;
+		}
+	}
+
+	.overline {
+		font-size: 24px;
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin-bottom: 0;
+		}
+
+		del {
+			font-size: 24px;
+		}
+
+		font-weight: 800;
+		color: var.$secondary-color;
+	}
+
+	.headline {
+		margin-top: 10px;
+		color: var.$primary-color;
+
+		h1 {
+			em {
+				font-style: normal;
+				font-size: calc(100% * 1.5);
+			}
+
+			font-size: 84px;
+
+			@include xsScreen {
+				font-size: 48px;
+			}
+
+			@include smScreen {
+				font-size: 50px;
+			}
+
+			@include mdScreen {
+				font-size: 56px;
+			}
+
+			@include lgScreen {
+				font-size: 62px;
+			}
+		}
+	}
+
+	.subtitle {
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	.bottomWrapper {
+		margin-top: 60px;
+
+		@include xsScreen {
+			margin-top: unset;
+		}
+
+		@include smScreen {
+			margin-top: unset;
+		}
+	}
+
+	.mediaWrapper {
+		padding-top: 120%;
+	}
+
+	.textSpinner {
+		@include xsScreen {
+			margin: 0 auto;
+		}
+	}
+
+	.socialsList {
+		height: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		color: var.$secondary-color;
+
+		@include xsScreen {
+			justify-content: center;
+		}
+
+		ul {
+			margin-bottom: 0;
+			padding-left: 0;
+			display: flex;
+			list-style: none;
+			font-weight: bold;
+
+			:not(:last-child) {
+				margin-right: 20px;
+			}
+
+			a {
+				display: inline-block;
+
+				@include xsScreen {
+					display: unset;
+				}
+			}
+			li {
+				@include xsScreen {
+					display: inherit;
+				}
+
+				@include smScreen {
+					display: inherit;
+				}
+
+				&:not(:first-child)::before {
+					content: '|';
+					position: relative;
+					top: 0;
+					left: -10px;
+				}
+			}
+		}
+	}
+}

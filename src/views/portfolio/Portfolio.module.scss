@@ -1,0 +1,24 @@
+@use '@styles/config/variables' as var;
+@use '@styles/config/functions' as *;
+
+:global {
+	.sparticles {
+		top: 0;
+		left: 0;
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		z-index: z('site-background');
+		animation: fadeIn 8s ease;
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
