@@ -1,12 +1,12 @@
-import { useLayoutEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 import { scrollTop } from '@helpers';
 
 export const ScrollRestore = ({ children }) => {
-	const { pathname } = useLocation();
+	const { pathname } = useRouter();
 
-	useLayoutEffect(() => scrollTop(), [pathname]);
+	useEffect(() => scrollTop(), [pathname]);
 
 	return children;
 };

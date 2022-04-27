@@ -1,5 +1,5 @@
-@use '@styles/global/extends' as *;
-@use '@styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/variables' as var;
 
 .main {
 	white-space: nowrap;

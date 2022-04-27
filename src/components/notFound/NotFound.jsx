@@ -7,7 +7,11 @@ import {
 	starConfig2,
 } from './index.js';
 import { Button, ImgFrame } from '@components';
-import ParticlesBg from 'particles-bg';
+import dynamic from 'next/dynamic';
+
+const ParticlesBg = dynamic(() => import('particles-bg'), {
+	ssr: false,
+});
 
 import styles from './NotFound.module.scss';
 import { Col, Container, Row } from 'react-bootstrap';

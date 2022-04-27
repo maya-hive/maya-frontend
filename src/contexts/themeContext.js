@@ -1,12 +1,18 @@
 import { createContext, useEffect } from 'react';
+
 import { Favicon } from '@components';
-import { useAxios } from '@hooks';
 import { theme } from '@services';
+import { fetchData } from '@helpers';
 
 export const ThemeContext = createContext('');
 
 export const ThemeContextProvider = props => {
-	const themeData = useAxios(theme);
+	const themeData = async () => {
+		let request = await fetch(theme);
+		let response = await request.json();
+
+		return response;
+	};
 
 	useEffect(() => {
 		document.body.style.setProperty(

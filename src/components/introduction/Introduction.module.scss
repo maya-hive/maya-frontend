@@ -1,6 +1,6 @@
-@use '@styles/config/variables' as var;
-@use '@styles/global/extends' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
 	@extend .center-spacing;
@@ -60,7 +60,7 @@
 }
 
 .sliderTrack {
-	color: var.$primary-nutral-color;
+	color: var.$primary-color;
 	filter: brightness(180%);
 	position: relative;
 

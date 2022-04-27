@@ -1,7 +1,7 @@
-@use '@styles/config/variables' as var;
-@use '@styles/global/extends' as *;
-@use '@styles/config/functions' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/functions' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
 	color: var.$on-background-color;

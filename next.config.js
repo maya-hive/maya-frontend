@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
+/**
+ * Next config options
+ *
+ * @type {import('next').NextConfig}
+ */
+
+const path = require('path');
 
 const nextConfig = {
 	reactStrictMode: true,
@@ -6,4 +12,12 @@ const nextConfig = {
 	trailingSlash: true,
 };
 
-module.exports = nextConfig;
+/** 
+ * Transpile modules from node_modules using the Next.js Babel configuration.
+
+ * @uses next-transpile-modules
+ */
+
+const transpileModules = require('next-transpile-modules')(['gsap']);
+
+module.exports = transpileModules({ nextConfig });

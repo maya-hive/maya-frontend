@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import Helmet from 'next/head';
 
 export const Head = props => {
 	const { data: propData } = props;
@@ -14,6 +14,7 @@ export const Head = props => {
 	const type = () => propData.type || 'website';
 
 	const url = () =>
+		window !== 'undefined' &&
 		`${process.env.REACT_APP_HOSTNAME || ''}${window.location.pathname}${
 			window.location.search
 		}`;

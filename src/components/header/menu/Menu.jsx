@@ -1,8 +1,8 @@
 import { forwardRef, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
 import { gsap, Power2 } from 'gsap';
 import { bool } from 'prop-types';
+import Link from 'next/link';
 
 import styles from './Menu.module.scss';
 import { Button } from '@components';
@@ -53,12 +53,12 @@ export const Menu = forwardRef(({ themeData, isOpen }, ref) => {
 					<ul aria-hidden={!isHidden} ref={listItemsRef}>
 						{themeData.theme_navigation_pages.map((value, index) => (
 							<li key={index}>
-								<NavLink
-									to={value.page.url}
+								<Link
+									href={value.page.url}
 									tabIndex={tabIndex}
 									style={({ isActive }) => (isActive ? activeStyle : null)}>
 									{value.page.title}
-								</NavLink>
+								</Link>
 							</li>
 						))}
 						<Button

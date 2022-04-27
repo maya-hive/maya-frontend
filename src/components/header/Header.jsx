@@ -1,10 +1,11 @@
-import styles from './Header.module.scss';
 import { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { useRouter } from 'next/router';
+
+import styles from './Header.module.scss';
 import { ThemeContext } from '@contexts';
 import { useScrollBlock } from '@hooks';
 import { Nav } from './index';
-import { useLocation } from 'react-router-dom';
 
 export const Header = () => {
 	const themeData = useContext(ThemeContext);
@@ -13,7 +14,7 @@ export const Header = () => {
 
 	const [blockScroll, allowScroll] = useScrollBlock();
 
-	const { pathname } = useLocation();
+	const { pathname } = useRouter();
 
 	useEffect(
 		() => (isOpen ? blockScroll() : allowScroll()),

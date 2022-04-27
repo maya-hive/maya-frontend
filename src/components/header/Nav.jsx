@@ -1,6 +1,6 @@
-import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { gsap, Expo } from 'gsap';
+import Link from 'next/link';
 
 import styles from './Nav.module.scss';
 import { Anchor, Button, ImgFrame } from '@components';
@@ -53,18 +53,19 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 				</Anchor>
 				{!mdDevice && (
 					<ul className={styles.navItems}>
-						{themeData.theme_navigation_pages.map(
-							({ page: { url, title } }, index) => (
-								<NavLink
-									to={url}
-									key={index}
-									{...cursorHandlers}
-									className={styles.navLink}
-									style={({ isActive }) => (isActive ? activeStyle : null)}>
-									{title}
-								</NavLink>
-							)
-						)}
+						{themeData.theme_navigation_pages &&
+							themeData.theme_navigation_pages.map(
+								({ page: { url, title } }, index) => (
+									<Link
+										href={url}
+										key={index}
+										{...cursorHandlers}
+										className={styles.navLink}
+										style={({ isActive }) => (isActive ? activeStyle : null)}>
+										{title}
+									</Link>
+								)
+							)}
 					</ul>
 				)}
 				<div className={styles.buttonWrap}>
@@ -72,8 +73,8 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 						<div className={styles.cta}>
 							<Button
 								styles={styles.button}
-								to={themeData.theme_navigation_cta.url}>
-								{themeData.theme_navigation_cta.name}
+								to={themeData.theme_navigation_cta?.url}>
+								{themeData.theme_navigation_cta?.name}
 							</Button>
 						</div>
 					)}

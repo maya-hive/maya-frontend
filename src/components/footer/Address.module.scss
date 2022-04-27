@@ -1,5 +1,5 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/mixins' as *;
 
 .main {
 	color: var.$on-background-color;

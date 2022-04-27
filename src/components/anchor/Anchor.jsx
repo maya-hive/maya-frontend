@@ -1,6 +1,7 @@
-import styles from './Anchor.module.scss';
 import { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
+
+import styles from './Anchor.module.scss';
 import { useCursorHandlers } from '@hooks';
 
 export const Anchor = forwardRef(
@@ -20,7 +21,7 @@ export const Anchor = forwardRef(
 
 		return to ? (
 			<Link
-				to={to}
+				href={to}
 				className={`${styles.main} ${className || ''}`}
 				onClick={event}
 				style={customStyles}

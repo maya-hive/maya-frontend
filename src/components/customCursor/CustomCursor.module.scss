@@ -1,7 +1,7 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/functions' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/functions' as *;
 
-* {
+:export * {
 	cursor: none !important;
 }
 
@@ -31,7 +31,7 @@
 	}
 }
 
-:global {
+:export {
 	.cursorInner {
 		&:is(.playerHovered) {
 			background-color: var.$on-background-color;

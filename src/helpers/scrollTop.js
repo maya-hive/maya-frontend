@@ -1,4 +1,6 @@
 export const scrollTop = () => {
+	if (typeof window === 'undefined') return;
+
 	const c = document.documentElement.scrollTop || document.body.scrollTop;
 
 	const triggerScroll = () => {

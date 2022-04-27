@@ -12,5 +12,7 @@
 		}
 	},
 	"plugins": ["import"],
-	"rules": {}
+	"rules": {
+		"react/display-name": [false, { "ignoreTranspilerName": true }]
+	}
 }

@@ -1,6 +1,6 @@
-@use '@styles/config/variables' as var;
-@use '@styles/global/extends' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
 	padding: 120px 0 250px;

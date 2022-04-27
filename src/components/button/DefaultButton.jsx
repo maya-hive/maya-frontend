@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { forwardRef } from 'react';
 
 import styles from './DefaultButton.module.scss';
@@ -22,7 +22,7 @@ export const DefaultButton = forwardRef(
 		const cursorHandlers = useCursorHandlers();
 
 		return to ? (
-			<Link to={to || '#'}>
+			<Link href={to || '#'}>
 				<button
 					className={`${styles.main} ${propStyles || ''} ${
 						secondary ? styles.secondary : styles.primary

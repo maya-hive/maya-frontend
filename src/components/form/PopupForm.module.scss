@@ -1,6 +1,6 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/mixins' as *;
-@use '@styles/config/functions' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/mixins' as *;
+@use 'styles/config/functions' as *;
 
 .main {
 	padding: 25px;
@@ -96,7 +96,7 @@
 	}
 }
 
-:global {
+:export {
 	.modal-backdrop {
 		&.show {
 			opacity: 0.7 !important;
