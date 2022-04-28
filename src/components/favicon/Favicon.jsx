@@ -1,16 +1,11 @@
-import { useEffect } from 'react';
+import Head from 'next/head';
 
-export const Favicon = ({ themeData }) => {
-	useEffect(() => {
-		const setFavicon = () => {
-			if (!themeData.theme_metadata_favicon) return;
-			document.getElementById('favicon').href =
-				themeData.theme_metadata_favicon;
-		};
-
-		document.addEventListener('loadstart', setFavicon());
-		return () => document.removeEventListener('loadstart', setFavicon());
-	}, [themeData]);
-
-	return null;
-};
+export const Favicon = ({ themeData }) => (
+	<Head>
+		<link
+			id={'favicon'}
+			rel={'shortcut icon'}
+			href={themeData.theme_metadata_favicon}
+		/>
+	</Head>
+);

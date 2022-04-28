@@ -1,19 +1,10 @@
 import { createContext, useEffect } from 'react';
 
 import { Favicon } from '@components';
-import { theme } from '@services';
-import { fetchData } from '@helpers';
 
 export const ThemeContext = createContext('');
 
-export const ThemeContextProvider = props => {
-	const themeData = async () => {
-		let request = await fetch(theme);
-		let response = await request.json();
-
-		return response;
-	};
-
+export const ThemeContextProvider = ({ themeData, children }) => {
 	useEffect(() => {
 		document.body.style.setProperty(
 			'--primary-color',
@@ -42,7 +33,7 @@ export const ThemeContextProvider = props => {
 	return (
 		<ThemeContext.Provider value={themeData}>
 			<Favicon themeData={themeData} />
-			{props.children}
+			{children}
 		</ThemeContext.Provider>
 	);
 };

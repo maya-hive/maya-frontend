@@ -1,6 +1,6 @@
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import { bool, func } from 'prop-types';
-import { useRouter } from 'next/link';
+import { useRouter } from 'next/router';
 
 import styles from './Burger.module.scss';
 

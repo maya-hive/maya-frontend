@@ -2,8 +2,7 @@ import { useInView } from 'react-intersection-observer';
 import { useCallback, useEffect, useRef } from 'react';
 
 import styles from './FeaturedProjectItem.module.scss';
-import { ReactComponent as Arrow } from './assets/fancy_arrow.svg';
-import { animations } from './index';
+import { animations, ArrowSvg } from './index';
 
 import { Anchor, FlexibleMedia } from '@components';
 import { useHover, useMediaQuery } from '@hooks';
@@ -69,8 +68,10 @@ export const FeaturedProjectItem = ({
 					<h3 className={styles.title}>{title}</h3>
 				</Anchor>
 				<Anchor to={`portfolio/${slug}`} className={styles.link}>
-					<p>{pageData.home_portfolio_postlinkname}</p>
-					<Arrow className={styles.arrow} />
+					<a>
+						<p>{pageData.home_portfolio_postlinkname}</p>
+						<ArrowSvg className={styles.arrow} />
+					</a>
 				</Anchor>
 			</div>
 			<div className={styles.mediaWrap} ref={setMediaRef}>

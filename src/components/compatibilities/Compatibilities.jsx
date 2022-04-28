@@ -118,11 +118,11 @@ export const Compatibilities = ({ pageData, themeData }) => {
 								) : (
 									<>
 										<img
-											src={mascotBody}
+											src={mascotBody.src}
 											alt={pageData.home_banner_media_alt}
 										/>
 										<img
-											src={mascotHelmet}
+											src={mascotHelmet.src}
 											alt={pageData.home_banner_media_alt}
 											className={styles.helmet}
 											ref={mascotHelmetRef}
