@@ -1,22 +1,57 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Front-end of WordPress Headless CMS For Maya.lk
 
-## Getting Started
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-First, run the development server:
+## Import Aliases
 
-```bash
-npm run dev
-# or
-yarn dev
+Use custom aliases for absolute import paths, [all supported aliases](https://github.com/maya-lk/maya-reactjs/blob/master/src/utils/aliases.js).
+
+```jsx
+import { PrimaryButton } from '@components';
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Editor auto completion configuration [intellisense for imports](https://github.com/maya-lk/maya-reactjs/blob/master/jsconfig.json).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Environment Variables
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Set the back-end entry point using the .env file.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```env
+NEXT_PUBLIC_API_ENTRY_POINT=https://app.com/api
+```
+
+## Recommended Tools
+
+1. [ESLint](https://eslint.org/) - JavaScript linter
+2. [Prettier](https://prettier.io/) - Code Formatter
+
+## Importing Stylesheets
+
+This project supports CSS Modules alongside regular stylesheets using the [name].module.css file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format [filename]\_[classname]\_\_[hash].
+
+## Available Scripts
+
+In the project directory, you can run:
+
+```shell
+$ npm run dev
+```
+
+Starts the development server and makes your application accessible at [http://localhost:3000](http://localhost:3000). Changes in the application code will be hot-reloaded along with eslint-error detection.
+
+<hr>
+
+```shell
+$ npm run build
+```
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+<hr>
 
 ## Learn More
 
@@ -26,9 +61,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
