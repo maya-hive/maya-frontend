@@ -25,8 +25,7 @@ export const Anchor = forwardRef(
 				className={`${styles.main} ${className || ''}`}
 				onClick={event}
 				style={customStyles}
-				{...cursorHandlers}
-				ref={ref}>
+				{...cursorHandlers}>
 				{children}
 			</Link>
 		) : (

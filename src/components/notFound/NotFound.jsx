@@ -17,10 +17,7 @@ import styles from './NotFound.module.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 
 export const NotFound = ({ pageData }) => {
-	const [windowRect, setWindowRect] = useState({
-		animWrapWidth: window.innerWidth / 2,
-		animWrapHeight: window.innerHeight,
-	});
+	const [windowRect, setWindowRect] = useState({});
 
 	const wrapperRef = useRef(null);
 

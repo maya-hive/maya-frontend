@@ -1,6 +1,6 @@
 # React Front-end of WordPress Headless CMS For Maya.lk
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
 
 ## Recommended Tools
 

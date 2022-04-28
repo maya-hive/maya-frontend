@@ -46,3 +46,5 @@ export * from './submit';
 export * from './form';
 export * from './scrollRestore';
 export * from './animateWrap';
+export * from './navLink';
+export * from './layout';

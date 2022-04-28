@@ -20,7 +20,7 @@ export const Home = ({
 	projectsData,
 	testimonialsData,
 }) => (
-	<div>
+	<>
 		<Head>
 			<title>{pageData.meta.title}</title>
 			<meta name="description" content="page Home" />
@@ -43,5 +43,5 @@ export const Home = ({
 				<HomeMarquee pageData={pageData} />
 			</BackgroundTransition>
 		</main>
-	</div>
+	</>
 );
