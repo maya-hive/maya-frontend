@@ -27,7 +27,21 @@ NEXT_PUBLIC_API_ENTRY_POINT=https://app.com/api
 
 ## Importing Stylesheets
 
-This project supports CSS Modules alongside regular stylesheets using the [name].module.css file naming convention. CSS Modules allows the scoping of CSS by automatically creating a unique classname of the format [filename]\_[classname]\_\_[hash].
+This project supports CSS Modules alongside regular stylesheets using the [name].module.css.
+
+Using Sass partials:
+
+```scss
+@import 'styles/config/variables' as var;
+```
+
+Styling components:
+
+```jsx
+import styles from './Component.module.scss';
+
+<div className={styles.div} />;
+```
 
 ## Available Scripts
 
