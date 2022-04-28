@@ -2,46 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Import Aliases
-
-Use custom aliases for absolute import paths, [all supported aliases](https://github.com/maya-lk/maya-reactjs/blob/master/src/utils/aliases.js).
-
-```jsx
-import { PrimaryButton } from '@components';
-```
-
-Editor auto completion configuration [intellisense for imports](https://github.com/maya-lk/maya-reactjs/blob/master/jsconfig.json).
-
-## Environment Variables
-
-Set the back-end entry point using the .env file.
-
-```env
-NEXT_PUBLIC_API_ENTRY_POINT=https://app.com/api
-```
-
 ## Recommended Tools
 
 1. [ESLint](https://eslint.org/) - JavaScript linter
 2. [Prettier](https://prettier.io/) - Code Formatter
-
-## Importing Stylesheets
-
-This project supports CSS Modules alongside regular stylesheets using the [name].module.css.
-
-Using Sass partials:
-
-```scss
-@import 'styles/config/variables' as var;
-```
-
-Styling components:
-
-```jsx
-import styles from './Component.module.scss';
-
-<div className={styles.div} />;
-```
 
 ## Available Scripts
 
@@ -64,6 +28,42 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
+
+## Environment Variables
+
+Set the back-end entry point using the .env file.
+
+```env
+NEXT_PUBLIC_API_ENTRY_POINT=https://app.com/api
+```
+
+## Importing Components
+
+Use custom aliases for absolute import paths.
+
+```jsx
+import { PrimaryButton } from '@components';
+```
+
+Editor auto completion configuration [intellisense for imports](https://github.com/maya-lk/maya-reactjs/blob/master/jsconfig.json).
+
+## Importing Stylesheets
+
+This project supports CSS Modules alongside regular stylesheets using the [name].module.css.
+
+Using Sass partials:
+
+```scss
+@import 'styles/config/variables' as var;
+```
+
+Styling components:
+
+```jsx
+import styles from './Component.module.scss';
+
+<div className={styles.div} />;
+```
 
 <hr>
 
