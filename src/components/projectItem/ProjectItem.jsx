@@ -35,7 +35,7 @@ export const ProjectItem = ({
 
 	return (
 		<div className={styles.main}>
-			<Anchor to={slug} ref={itemRef}>
+			<Anchor to={`portfolio/project/${slug}`} ref={itemRef}>
 				{thumbnail && (
 					<FlexibleMedia
 						url={thumbnail}

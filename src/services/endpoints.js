@@ -18,3 +18,4 @@ export const projectTechnologies = `${prefix}/project-technologies`;
 export const enquiry = `${prefix}/inquiry`;
 export const careersApplication = `${prefix}/careers-application`;
 export const compatibilitiesApplication = `${prefix}/compatibilities-application`;
+export const projectSingle = `${prefix}/project?slug=`;

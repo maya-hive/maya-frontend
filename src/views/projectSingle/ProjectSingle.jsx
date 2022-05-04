@@ -13,21 +13,23 @@ import {
 } from '@components';
 import { animations } from './animations';
 
-export const ProjectSingle = ({
-	title,
-	color,
-	thumbnail,
-	banner,
-	poster,
-	link,
-	video,
-	content,
-	categories_name,
-	digital,
-	themeData,
-	postTechnologies,
-	allTechnologies,
-}) => {
+export const ProjectSingle = ({ projectData }) => {
+	const {
+		title,
+		color,
+		thumbnail,
+		banner,
+		poster,
+		link,
+		video,
+		content,
+		categories_name,
+		digital,
+		themeData,
+		postTechnologies,
+		allTechnologies,
+	} = projectData;
+
 	const [active, setActive] = useState(false);
 
 	const videoRef = useRef(null);
