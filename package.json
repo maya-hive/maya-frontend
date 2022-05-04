@@ -3,9 +3,10 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
+		"dev": "NODE_ENV=development next dev",
 		"start": "next start",
+		"production": "NODE_ENV=production next build",
+		"postproduction": "NODE_ENV=production next export -o build/",
 		"lint": "next lint"
 	},
 	"dependencies": {

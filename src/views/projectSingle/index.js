@@ -1,2 +1,2 @@
-export { Project as default } from './Project';
+export { ProjectSingle as default } from './ProjectSingle';
 export { getStaticProps, getStaticPaths } from './service';

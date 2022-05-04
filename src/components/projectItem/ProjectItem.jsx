@@ -36,21 +36,19 @@ export const ProjectItem = ({
 	return (
 		<div className={styles.main}>
 			<Anchor to={slug} ref={itemRef}>
-				<>
-					{thumbnail && (
-						<FlexibleMedia
-							url={thumbnail}
-							alt={title}
-							styles={styles.thumbnail}
-						/>
-					)}
-					<div className={styles.contentWrap} ref={itemContentRef}>
-						<h5 className={styles.category}>{categories_name[0]}</h5>
-						<h3 className={styles.title} style={color && { color: color }}>
-							{title}
-						</h3>
-					</div>
-				</>
+				{thumbnail && (
+					<FlexibleMedia
+						url={thumbnail}
+						alt={title}
+						styles={styles.thumbnail}
+					/>
+				)}
+				<div className={styles.contentWrap} ref={itemContentRef}>
+					<h5 className={styles.category}>{categories_name[0]}</h5>
+					<h3 className={styles.title} style={color && { color: color }}>
+						{title}
+					</h3>
+				</div>
 			</Anchor>
 		</div>
 	);

@@ -11,6 +11,7 @@
 			"@styles": ["styles"],
 			"@hooks": ["hooks"],
 			"@utils": ["utils"],
+			"@views": ["views/*"],
 			"@app": ["app"]
 		}
 	},

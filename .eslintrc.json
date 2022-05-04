@@ -13,6 +13,7 @@
 	},
 	"plugins": ["import"],
 	"rules": {
-		"react/display-name": [false, { "ignoreTranspilerName": true }]
+		"react/display-name": [0, { "ignoreTranspilerName": true }],
+		"@next/next/no-img-element": "off"
 	}
 }

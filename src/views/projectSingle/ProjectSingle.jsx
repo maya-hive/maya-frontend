@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-import styles from './Project.module.scss';
+import styles from './ProjectSingle.module.scss';
 import { useHover, useMediaQuery, useTouchDetect } from '@hooks';
 import {
 	Anchor,
@@ -13,24 +13,21 @@ import {
 } from '@components';
 import { animations } from './animations';
 
-export const Project = ({ projectData }) => {
-	const {
-		meta,
-		title,
-		color,
-		thumbnail,
-		banner,
-		poster,
-		link,
-		video,
-		content,
-		categories_name,
-		digital,
-		themeData,
-		postTechnologies,
-		allTechnologies,
-	} = projectData;
-
+export const ProjectSingle = ({
+	title,
+	color,
+	thumbnail,
+	banner,
+	poster,
+	link,
+	video,
+	content,
+	categories_name,
+	digital,
+	themeData,
+	postTechnologies,
+	allTechnologies,
+}) => {
 	const [active, setActive] = useState(false);
 
 	const videoRef = useRef(null);
@@ -78,7 +75,9 @@ export const Project = ({ projectData }) => {
 						ref={containerRef}>
 						<Container>
 							<div ref={headWrapRef} className={styles.headerWrap}>
-								<h3 className={styles.categoryName}>{categories_name[0]}</h3>
+								<h3 className={styles.categoryName}>
+									{categories_name && categories_name[0]}
+								</h3>
 								<h1 style={color ? { color: color } : null}>{title}</h1>
 								<div className={styles.iconRowWrap}>
 									{allTechnologies?.data &&

@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Sparticles from 'sparticles';
 
-import './Portfolio.module.scss';
 import { particleConfig } from './particleConfig';
 import { useMediaQuery } from '@hooks';
 import {

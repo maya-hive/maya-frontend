@@ -20,7 +20,7 @@ Starts the development server and makes your application accessible at [http://l
 <hr>
 
 ```shell
-$ npm run build
+$ npm run production
 ```
 
 Builds the app for production to the `build` folder.\

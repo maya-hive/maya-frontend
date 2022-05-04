@@ -20,13 +20,13 @@ export const Anchor = forwardRef(
 		const cursorHandlers = useCursorHandlers();
 
 		return to ? (
-			<Link
-				href={to}
-				className={`${styles.main} ${className || ''}`}
-				onClick={event}
-				style={customStyles}
-				{...cursorHandlers}>
-				{children}
+			<Link href={to} onClick={event} {...cursorHandlers}>
+				<div
+					ref={ref}
+					style={customStyles}
+					className={`${styles.main} ${className || ''}`}>
+					{children}
+				</div>
 			</Link>
 		) : (
 			<a
