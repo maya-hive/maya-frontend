@@ -1,0 +1,156 @@
+@use 'styles/config/variables' as var;
+@use 'styles/config/functions' as *;
+@use 'styles/config/mixins' as *;
+@use 'styles/global/extends' as *;
+
+.sparticles {
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: z('site-background');
+	animation: fadeIn 8s ease;
+}
+
+.accordion {
+	.accordion-item {
+		background-color: unset;
+
+		.accordion-button {
+			box-shadow: unset;
+			background-color: darken(var.$surface-color, 7%);
+			color: var.$on-secondary-color;
+			border: 0;
+			border-radius: 0;
+		}
+		.accordion-button {
+			padding: 2rem 1.25rem;
+
+			@include xsScreen {
+				flex-direction: column;
+				align-items: unset;
+			}
+
+			&::after {
+				position: absolute;
+				margin-left: 25px;
+				margin-right: 23px;
+				right: 20px;
+				width: 24px;
+				height: 3px;
+				background-color: var.$on-secondary-color;
+
+				@include xsScreen {
+					margin: 0;
+					position: absolute;
+					right: 43px;
+					bottom: 50%;
+				}
+				@media (max-width: 400px) {
+					content: unset;
+				}
+			}
+
+			&::before {
+				position: absolute;
+				right: 25px;
+				flex-shrink: 0;
+				width: 60px;
+				height: 60px;
+				margin-left: auto;
+				content: '—';
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 24px;
+				font-weight: 900;
+				padding-bottom: 2px;
+				border: 3px solid var.$on-secondary-color;
+				border-radius: 100%;
+				transition: transform 300ms ease-in-out;
+				transition-delay: 100ms;
+				transform: rotate(90deg);
+
+				@include xsScreen {
+					margin: 0;
+					bottom: 17%;
+				}
+
+				@media (max-width: 400px) {
+					content: unset;
+				}
+			}
+
+			&:not(.collapsed) {
+				&::before {
+					transform: rotate(0);
+				}
+				&::after {
+					transform: rotate(0);
+				}
+			}
+		}
+	}
+}
+
+.card-1,
+.card-3 {
+	background-color: darken(var.$surface-color, 10%) !important;
+
+	.bg-img {
+		filter: grayscale(100%) brightness(20%) !important;
+	}
+}
+
+.projectsSlider {
+	.slick-list {
+		overflow: visible;
+
+		.slick-slide {
+			outline: 0;
+			border: 0;
+			padding-right: 140px;
+
+			@include xsScreen {
+				padding-right: 54px;
+			}
+
+			@include smScreen {
+				padding-right: 100px;
+			}
+
+			@include mdScreen {
+				padding-right: 120px;
+			}
+		}
+	}
+}
+.arrowAnim {
+	position: relative;
+}
+
+.cursorInner {
+	&:is(.playerHovered) {
+		background-color: var.$on-background-color;
+		width: 40px;
+		height: 40px;
+		transform: translate(-50%, -50%) scale(2);
+	}
+
+	&:not(.playerHovered) {
+		border: 1px solid var.$on-background-color;
+		background-color: var.$on-background-color;
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	&:is(.active) {
+		height: 25px !important;
+		width: 25px !important;
+		font-size: 0;
+	}
+
+	.fas {
+		color: var.$primary-color;
+	}
+}

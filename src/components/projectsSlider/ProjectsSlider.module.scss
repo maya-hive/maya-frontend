@@ -53,32 +53,3 @@
 		}
 	}
 }
-
-:export {
-	.projectsSlider {
-		.slick-list {
-			overflow: visible;
-
-			.slick-slide {
-				outline: 0;
-				border: 0;
-				padding-right: 140px;
-
-				@include xsScreen {
-					padding-right: 54px;
-				}
-
-				@include smScreen {
-					padding-right: 100px;
-				}
-
-				@include mdScreen {
-					padding-right: 120px;
-				}
-			}
-		}
-	}
-	.arrowAnim {
-		position: relative;
-	}
-}

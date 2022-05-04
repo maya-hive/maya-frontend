@@ -24,6 +24,7 @@
 			width: 15%;
 			min-width: 150px;
 			z-index: z('on-header');
+			height: 80px;
 
 			@include smScreen {
 				margin-top: 0.5rem;
@@ -70,7 +71,7 @@
 				justify-content: flex-end;
 			}
 
-			.navLink {
+			a {
 				list-style: none;
 				text-decoration: none;
 				color: unset;

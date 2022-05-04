@@ -78,14 +78,3 @@
 		padding: 20px 0 20px;
 	}
 }
-
-:export {
-	.card-1,
-	.card-3 {
-		background-color: darken(var.$surface-color, 10%);
-
-		.bg-img {
-			filter: grayscale(100%) brightness(20%);
-		}
-	}
-}

@@ -109,12 +109,14 @@
 		}
 
 		.link {
-			display: flex;
-			font-size: 18px;
-			font-weight: 300;
-			color: var.$on-secondary-color;
-			z-index: 1;
-			position: relative;
+			a {
+				display: flex;
+				font-size: 18px;
+				font-weight: 300;
+				color: var.$on-secondary-color;
+				z-index: 1;
+				position: relative;
+			}
 
 			@include xsScreen {
 				margin-top: 20px;

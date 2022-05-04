@@ -64,10 +64,10 @@ export const FeaturedProjectItem = ({
 		<div key={index} className={styles.main}>
 			<div className={styles.contentWrapper} ref={setTitleRef}>
 				<h4 className={styles.category}>{categories_name[0]}</h4>
-				<Anchor to={`/portfolio/${slug}`} ref={anchorRef}>
+				<Anchor to={`/portfolio/project/${slug}`} ref={anchorRef}>
 					<h3 className={styles.title}>{title}</h3>
 				</Anchor>
-				<Anchor to={`/portfolio/${slug}`} className={styles.link}>
+				<Anchor to={`/portfolio/project/${slug}`} className={styles.link}>
 					<a>
 						<p>{pageData.home_portfolio_postlinkname}</p>
 						<ArrowSvg className={styles.arrow} />
