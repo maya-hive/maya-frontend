@@ -1,4 +1,5 @@
 import {
+	Head,
 	BackgroundTransition,
 	CurrentVacancies,
 	AnimateWrap,
@@ -6,6 +7,7 @@ import {
 
 export const Careers = ({ pageData, themeData }) => (
 	<>
+		<Head data={pageData.meta} />
 		<main>
 			<BackgroundTransition>
 				<AnimateWrap>

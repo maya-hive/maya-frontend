@@ -4,6 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import styles from './ProjectSingle.module.scss';
 import { useHover, useMediaQuery, useTouchDetect } from '@hooks';
 import {
+	Head,
 	Anchor,
 	Button,
 	ImgFrame,
@@ -15,6 +16,7 @@ import { animations } from './animations';
 
 export const ProjectSingle = ({
 	projectData: {
+		meta,
 		title,
 		color,
 		thumbnail,
@@ -69,6 +71,7 @@ export const ProjectSingle = ({
 
 	return (
 		<>
+			<Head data={meta} />
 			<main className={styles.main}>
 				<BackgroundTransition>
 					<div

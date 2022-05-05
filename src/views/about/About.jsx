@@ -1,4 +1,5 @@
 import {
+	Head,
 	AboutDescription,
 	BackgroundTransition,
 	InnovationTimeline,
@@ -9,6 +10,7 @@ import {
 
 export const About = ({ pageData }) => (
 	<>
+		<Head data={pageData.meta} />
 		<main>
 			<BackgroundTransition trigger={'+=300px top'}>
 				<AnimateWrap>

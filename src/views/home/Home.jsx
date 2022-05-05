@@ -1,6 +1,5 @@
-import Head from 'next/head';
-
 import {
+	Head,
 	BannerHome,
 	BrandsCarousel,
 	Introduction,
@@ -21,11 +20,7 @@ export const Home = ({
 	testimonialsData,
 }) => (
 	<>
-		<Head>
-			<title>{pageData.meta.title}</title>
-			<meta name="description" content="page Home" />
-			<link rel="icon" href="/favicon.ico" />
-		</Head>
+		<Head data={pageData.meta} />
 		<main>
 			<AnimateWrap>
 				<BannerHome pageData={pageData} themeData={themeData} />

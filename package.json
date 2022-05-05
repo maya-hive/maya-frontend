@@ -10,9 +10,11 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"chrome-aws-lambda": "^10.1.0",
 		"framer-motion": "^6.3.2",
 		"gsap": "^3.10.4",
 		"next": "12.1.5",
+		"next-api-og-image": "^3.0.0",
 		"next-transpile-modules": "^9.0.0",
 		"particles-bg": "^2.5.5",
 		"react": "18.0.0",
@@ -30,6 +32,7 @@
 	"devDependencies": {
 		"eslint": "8.14.0",
 		"eslint-config-next": "12.1.5",
+		"puppeteer": "^13.7.0",
 		"sass": "^1.51.0"
 	}
 }

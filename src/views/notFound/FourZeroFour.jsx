@@ -1,17 +1,16 @@
-import Head from 'next/head';
-
+import { NotFound, Head } from '@components';
 import { headerTheme } from './FourZeroFour.styles.js';
-import { NotFound } from '@components';
 import { styleToString } from '@helpers';
 
 export const FourZeroFour = ({ pageData }) => (
 	<>
-		<Head>
-			<style>
-				{pageData.notfound_appearance_navbtnsecondary &&
-					styleToString(headerTheme)}
-			</style>
-		</Head>
+		<Head
+			data={pageData.meta}
+			style={
+				pageData.notfound_appearance_navbtnsecondary &&
+				styleToString(headerTheme)
+			}
+		/>
 		<NotFound pageData={pageData} />
 	</>
 );
