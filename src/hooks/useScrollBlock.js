@@ -10,6 +10,8 @@ export const useScrollBlock = () => {
 	const blockScroll = () => {
 		if (!body || !body.style || scrollBlocked.current) return;
 
+		if (typeof window === 'undefined') return;
+
 		const scrollBarWidth = window.innerWidth - html.clientWidth;
 		const bodyPaddingRight =
 			parseInt(

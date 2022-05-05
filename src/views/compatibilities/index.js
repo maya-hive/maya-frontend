@@ -1,2 +1,2 @@
-export * from './Compatibilities';
-export * from './Compatibilities.styles.js';
+export { Compatibilities as default } from './Compatibilities';
+export { getStaticProps } from './service';

@@ -1,4 +1,5 @@
 import Ticker from 'react-ticker';
+
 import styles from './Marquee.module.scss';
 import { Headline } from '@components';
 

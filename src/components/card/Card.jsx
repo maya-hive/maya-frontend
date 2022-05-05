@@ -27,7 +27,7 @@ export const Card = forwardRef(
 					</div>
 					<h3 className={styles.headline}>{headline}</h3>
 					<h4 className={styles.subtitle}>{subtitle}</h4>
-					<p className={styles.body}>{body}</p>
+					<div className={styles.body}>{body}</div>
 					<Button
 						name={headline.replace(/\s/g, '')}
 						className={styles.button}

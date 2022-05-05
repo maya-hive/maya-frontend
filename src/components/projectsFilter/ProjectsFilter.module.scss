@@ -1,6 +1,6 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/functions' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/functions' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
 	margin: 150px 0 50px;

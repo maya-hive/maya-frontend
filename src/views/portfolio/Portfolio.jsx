@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
 import Sparticles from 'sparticles';
 
-import './Portfolio.module.scss';
-import { particleConfig } from './index';
+import { particleConfig } from './particleConfig';
 import { useMediaQuery } from '@hooks';
 import {
+	Head,
 	AnimateWrap,
 	BackgroundTransition,
-	Head,
 	ProjectsFilter,
 	ProjectsList,
 } from '@components';

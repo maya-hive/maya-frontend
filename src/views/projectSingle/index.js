@@ -1,2 +1,2 @@
-export * from './ProjectSingle';
-export * from './animations';
+export { ProjectSingle as default } from './ProjectSingle';
+export { getStaticProps, getStaticPaths } from './service';

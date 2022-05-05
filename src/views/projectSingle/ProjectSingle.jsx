@@ -4,31 +4,33 @@ import { Col, Container, Row } from 'react-bootstrap';
 import styles from './ProjectSingle.module.scss';
 import { useHover, useMediaQuery, useTouchDetect } from '@hooks';
 import {
+	Head,
 	Anchor,
 	Button,
-	Head,
 	ImgFrame,
 	VideoPlayer,
 	FlexibleMedia,
 	BackgroundTransition,
 } from '@components';
-import { animations } from './index';
+import { animations } from './animations';
 
 export const ProjectSingle = ({
-	meta,
-	title,
-	color,
-	thumbnail,
-	banner,
-	poster,
-	link,
-	video,
-	content,
-	categories_name,
-	digital,
-	themeData,
-	postTechnologies,
-	allTechnologies,
+	projectData: {
+		meta,
+		title,
+		color,
+		thumbnail,
+		banner,
+		poster,
+		link,
+		video,
+		content,
+		categories_name,
+		digital,
+		themeData,
+		postTechnologies,
+		allTechnologies,
+	},
 }) => {
 	const [active, setActive] = useState(false);
 
@@ -69,7 +71,7 @@ export const ProjectSingle = ({
 
 	return (
 		<>
-			<Head title={meta.title || title} data={meta} />
+			<Head data={meta} />
 			<main className={styles.main}>
 				<BackgroundTransition>
 					<div
@@ -78,10 +80,12 @@ export const ProjectSingle = ({
 						ref={containerRef}>
 						<Container>
 							<div ref={headWrapRef} className={styles.headerWrap}>
-								<h3 className={styles.categoryName}>{categories_name[0]}</h3>
+								<h3 className={styles.categoryName}>
+									{categories_name && categories_name[0]}
+								</h3>
 								<h1 style={color ? { color: color } : null}>{title}</h1>
 								<div className={styles.iconRowWrap}>
-									{allTechnologies.data &&
+									{allTechnologies?.data &&
 										allTechnologies.data.map(
 											({ term_id: ID, title, image }) =>
 												postTechnologies?.includes(ID) &&
@@ -119,7 +123,7 @@ export const ProjectSingle = ({
 								<FlexibleMedia
 									url={banner || thumbnail}
 									alt={title}
-									poster={poster}
+									poster={poster || undefined}
 									styles={styles.media}
 									style={{ opacity: active ? '0' : '1' }}
 								/>
@@ -137,18 +141,18 @@ export const ProjectSingle = ({
 					</div>
 					<Container>
 						<article ref={contentRef}>
-							<p
+							<div
 								className={styles.content}
 								dangerouslySetInnerHTML={{ __html: content }}
 							/>
 							{digital && (
 								<div className={styles.globalCat}>
-									<h2>{themeData.theme_filtering_headline}</h2>
+									<h2>{themeData?.theme_filtering_headline}</h2>
 									<Row>
 										{digital.map(
 											({ image, link }, index) =>
 												link.title && (
-													<Col sm={12} md={6} lg={4}>
+													<Col sm={12} md={6} lg={4} key={index}>
 														<Anchor
 															key={index}
 															href={link.url}

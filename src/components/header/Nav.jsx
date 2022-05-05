@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { gsap, Expo } from 'gsap';
+import { useRouter } from 'next/router';
 
 import styles from './Nav.module.scss';
-import { Anchor, Button, ImgFrame } from '@components';
+import { Anchor, Button, NavLink, ImgFrame } from '@components';
 import { useCursorHandlers, useMediaQuery } from '@hooks';
 import { Burger, Menu } from './index';
 
@@ -14,6 +14,7 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 	const mdDevice = useMediaQuery('(max-width: 1200px)');
 	const smDevice = useMediaQuery('(max-width: 576px)');
 
+	const { pathname } = useRouter();
 	const cursorHandlers = useCursorHandlers();
 
 	useEffect(() => {
@@ -37,10 +38,6 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 		}
 	}, [isOpen, backdropRef]);
 
-	let activeStyle = {
-		color: themeData?.theme_appearance_primary,
-	};
-
 	return (
 		<nav className={styles.main}>
 			<div className={styles.navBarInnerWrapper}>
@@ -53,18 +50,18 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 				</Anchor>
 				{!mdDevice && (
 					<ul className={styles.navItems}>
-						{themeData.theme_navigation_pages.map(
-							({ page: { url, title } }, index) => (
-								<NavLink
-									to={url}
-									key={index}
-									{...cursorHandlers}
-									className={styles.navLink}
-									style={({ isActive }) => (isActive ? activeStyle : null)}>
-									{title}
-								</NavLink>
-							)
-						)}
+						{themeData.theme_navigation_pages &&
+							themeData.theme_navigation_pages.map(
+								({ page: { url, title } }, index) => (
+									<NavLink
+										href={url}
+										key={index}
+										activeStyle={themeData?.theme_appearance_primary}
+										{...cursorHandlers}>
+										{title}
+									</NavLink>
+								)
+							)}
 					</ul>
 				)}
 				<div className={styles.buttonWrap}>
@@ -72,8 +69,8 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 						<div className={styles.cta}>
 							<Button
 								styles={styles.button}
-								to={themeData.theme_navigation_cta.url}>
-								{themeData.theme_navigation_cta.name}
+								to={themeData.theme_navigation_cta?.url}>
+								{themeData.theme_navigation_cta?.name}
 							</Button>
 						</div>
 					)}

@@ -1,6 +1,6 @@
-@use '@styles/config/variables' as var;
-@use '@styles/global/extends' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
 	@extend .center-spacing;
@@ -51,34 +51,5 @@
 			padding-bottom: 10%;
 			clip-path: none;
 		}
-	}
-}
-
-:global {
-	.projectsSlider {
-		.slick-list {
-			overflow: visible;
-
-			.slick-slide {
-				outline: 0;
-				border: 0;
-				padding-right: 140px;
-
-				@include xsScreen {
-					padding-right: 54px;
-				}
-
-				@include smScreen {
-					padding-right: 100px;
-				}
-
-				@include mdScreen {
-					padding-right: 120px;
-				}
-			}
-		}
-	}
-	.arrowAnim {
-		position: relative;
 	}
 }

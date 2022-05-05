@@ -1,16 +1,14 @@
-@use '@styles/config/variables' as var;
-@use '@styles/global/extends' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
-	a {
-		position: relative;
-		margin: 0;
-		display: grid;
-		grid-template-rows: 1fr auto;
-		margin-bottom: 16px;
-		break-inside: avoid;
-	}
+	position: relative;
+	margin: 0;
+	display: grid;
+	grid-template-rows: 1fr auto;
+	margin-bottom: 16px;
+	break-inside: avoid;
 
 	img {
 		max-width: 100%;

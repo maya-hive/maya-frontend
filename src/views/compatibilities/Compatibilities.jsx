@@ -5,7 +5,7 @@ import {
 	BackgroundTransition,
 } from '@components';
 import { styleToString } from '@helpers';
-import { headerTheme } from './index';
+import { headerTheme } from './Compatibilities.styles';
 
 export const Compatibilities = ({ pageData }) => (
 	<>

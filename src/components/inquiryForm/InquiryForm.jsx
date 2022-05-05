@@ -56,12 +56,16 @@ export const InquiryForm = ({ pageData, themeData }) => {
 										<img
 											className={styles.helmet}
 											ref={mascotHelmetRef}
-											src={mascotHelmet}
+											src={mascotHelmet.src}
 											alt={'img'}
 										/>
-										<img className={styles.body} src={mascotBody} alt={'img'} />
+										<img
+											className={styles.body}
+											src={mascotBody.src}
+											alt={'img'}
+										/>
 									</div>
-									<img className={styles.bg} src={mascotBg} alt={'img'} />
+									<img className={styles.bg} src={mascotBg.src} alt={'img'} />
 									<Overline>{pageData.contact_form_infooverline}</Overline>
 									<div className={styles.headline}>
 										{'Say '}

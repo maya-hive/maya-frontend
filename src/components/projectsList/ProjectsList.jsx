@@ -10,6 +10,7 @@ const ProjectItem = lazy(() =>
 export const ProjectsList = ({ projectsData: { data }, filter }) => {
 	const filteredPortfolio = useMemo(() => {
 		if (filter === 'all') return data;
+
 		return data.filter(({ categories_slug }) =>
 			categories_slug.includes(filter)
 		);

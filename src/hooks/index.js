@@ -1,4 +1,3 @@
-export * from './useAxios';
 export * from './useMousePosition';
 export * from './useOnScreen';
 export * from './useTouchDetect';

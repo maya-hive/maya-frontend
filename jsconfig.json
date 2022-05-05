@@ -1,23 +1,19 @@
 {
 	"compilerOptions": {
 		"baseUrl": "src",
-		"jsx": "react-jsx",
 		"paths": {
 			"@components": ["components"],
-			"@constants": ["constants"],
 			"@contexts": ["contexts"],
 			"@services": ["services"],
 			"@helpers": ["helpers"],
 			"@config": ["config"],
-			"@router": ["router"],
 			"@assets": ["assets"],
 			"@styles": ["styles"],
 			"@hooks": ["hooks"],
 			"@utils": ["utils"],
-			"@views": ["views"],
+			"@views": ["views/*"],
 			"@app": ["app"]
 		}
 	},
-	"include": ["src"],
 	"exclude": ["node_modules"]
 }

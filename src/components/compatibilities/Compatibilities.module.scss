@@ -1,6 +1,6 @@
-@use '@styles/config/variables' as var;
-@use '@styles/global/extends' as *;
-@use '@styles/config/mixins' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
 
 .main {
 	@extend .center-spacing;
@@ -76,16 +76,5 @@
 	.cardsWrapper {
 		color: var.$on-secondary-color;
 		padding: 20px 0 20px;
-	}
-}
-
-:global {
-	.card-1,
-	.card-3 {
-		background-color: darken(var.$surface-color, 10%);
-
-		.bg-img {
-			filter: grayscale(100%) brightness(20%);
-		}
 	}
 }

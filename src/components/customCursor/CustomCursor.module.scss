@@ -1,9 +1,5 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/functions' as *;
-
-* {
-	cursor: none !important;
-}
+@use 'styles/config/variables' as var;
+@use 'styles/config/functions' as *;
 
 .main {
 	position: fixed;
@@ -31,7 +27,7 @@
 	}
 }
 
-:global {
+:export {
 	.cursorInner {
 		&:is(.playerHovered) {
 			background-color: var.$on-background-color;

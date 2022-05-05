@@ -40,12 +40,12 @@ export const ProjectsFilter = ({
 							{pageData.portfolio_filtering_animation === 'anim' ? (
 								<>
 									<img
-										src={floatingSaturn}
+										src={floatingSaturn.src}
 										alt={pageData.portfolio_filtering_overline}
 										className={styles.saturnImg}
 									/>
 									<img
-										src={mascotFreeStyle}
+										src={mascotFreeStyle.src}
 										alt={pageData.portfolio_filtering_overline}
 										className={styles.mascotImg}
 									/>

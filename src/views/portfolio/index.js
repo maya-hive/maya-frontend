@@ -1,2 +1,2 @@
-export * from './Portfolio';
-export * from './particleConfig';
+export { Portfolio as default } from './Portfolio';
+export { getStaticProps } from './service';

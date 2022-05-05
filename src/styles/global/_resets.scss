@@ -1,11 +1,13 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/mixins' as *;
-@use '@styles/global/extends' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/functions' as *;
+@use 'styles/config/mixins' as *;
+@use 'styles/global/extends' as *;
 
 body {
 	font-family: var.$primary-font;
 	color: var.$primary-nutral-color;
 	position: relative;
+	cursor: none;
 
 	h1,
 	h2,
@@ -54,6 +56,7 @@ input:-webkit-autofill {
 
 a {
 	text-decoration: none;
+	color: var.$primary-nutral-color;
 
 	&:hover {
 		color: unset;

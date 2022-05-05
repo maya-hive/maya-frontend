@@ -1,14 +1,15 @@
-import styles from './Burger.module.scss';
 import { forwardRef, useEffect, useRef, useState } from 'react';
 import { bool, func } from 'prop-types';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
+
+import styles from './Burger.module.scss';
 
 export const Burger = forwardRef(({ isOpen, setOpen, ...props }, ref) => {
 	const [isActive, setIsActive] = useState(false);
 
 	const localRef = useRef(null);
 
-	const { pathname } = useLocation();
+	const { pathname } = useRouter();
 
 	const isExpanded = isOpen ? true : false;
 

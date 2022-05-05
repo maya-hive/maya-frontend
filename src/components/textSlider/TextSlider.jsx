@@ -1,5 +1,6 @@
-import styles from './TextSlider.module.scss';
 import { useEffect, useRef } from 'react';
+
+import styles from './TextSlider.module.scss';
 import { useMediaQuery } from '@hooks';
 
 export const TextSlider = props => {
@@ -8,7 +9,7 @@ export const TextSlider = props => {
 
 	const isMobile = useMediaQuery('(max-width: 700px)');
 
-	const onScrollSlider = () => {
+	useEffect(() => {
 		let textLeft = textLeftRef.current;
 		let textRight = textRightRef.current;
 
@@ -25,10 +26,6 @@ export const TextSlider = props => {
 				}
 			}
 		});
-	};
-
-	useEffect(() => {
-		onScrollSlider();
 	});
 
 	return (

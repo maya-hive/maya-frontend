@@ -1,0 +1,19 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true
+	},
+	"extends": "next/core-web-vitals",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["import"],
+	"rules": {
+		"react/display-name": [0, { "ignoreTranspilerName": true }],
+		"@next/next/no-img-element": "off"
+	}
+}

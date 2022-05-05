@@ -7,16 +7,17 @@ import {
 	starConfig2,
 } from './index.js';
 import { Button, ImgFrame } from '@components';
-import ParticlesBg from 'particles-bg';
+import dynamic from 'next/dynamic';
+
+const ParticlesBg = dynamic(() => import('particles-bg'), {
+	ssr: false,
+});
 
 import styles from './NotFound.module.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 
 export const NotFound = ({ pageData }) => {
-	const [windowRect, setWindowRect] = useState({
-		animWrapWidth: window.innerWidth / 2,
-		animWrapHeight: window.innerHeight,
-	});
+	const [windowRect, setWindowRect] = useState({});
 
 	const wrapperRef = useRef(null);
 

@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import styles from './RoundButton.module.scss';
 import { useCursorHandlers } from '@hooks';
@@ -9,7 +9,7 @@ export const RoundButton = forwardRef(
 		const cursorHandlers = useCursorHandlers();
 
 		return to ? (
-			<Link to={to || ''}>
+			<Link href={to || ''}>
 				<button
 					className={`${styles.main} ${propStyles || ''} ${
 						secondary ? styles.secondary : styles.primary

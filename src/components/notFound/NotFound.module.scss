@@ -1,7 +1,7 @@
-@use '@styles/config/variables' as var;
-@use '@styles/config/mixins' as *;
-@use '@styles/global/extends' as *;
-@use '@styles/config/functions' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/mixins' as *;
+@use 'styles/global/extends' as *;
+@use 'styles/config/functions' as *;
 
 .main {
 	padding: 0px 0 100px;

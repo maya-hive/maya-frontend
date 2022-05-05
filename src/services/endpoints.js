@@ -1,4 +1,4 @@
-const { REACT_APP_API_ENTRY_POINT: prefix } = process.env;
+const prefix = process.env.NEXT_PUBLIC_API_ENTRY_POINT;
 
 export const home = `${prefix}/home`;
 export const theme = `${prefix}/theme`;
@@ -18,3 +18,4 @@ export const projectTechnologies = `${prefix}/project-technologies`;
 export const enquiry = `${prefix}/inquiry`;
 export const careersApplication = `${prefix}/careers-application`;
 export const compatibilitiesApplication = `${prefix}/compatibilities-application`;
+export const projectSingle = `${prefix}/project?slug=`;

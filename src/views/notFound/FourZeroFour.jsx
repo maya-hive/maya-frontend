@@ -1,5 +1,5 @@
-import { headerTheme } from './FourZeroFour.styles.js';
 import { NotFound, Head } from '@components';
+import { headerTheme } from './FourZeroFour.styles.js';
 import { styleToString } from '@helpers';
 
 export const FourZeroFour = ({ pageData }) => (
