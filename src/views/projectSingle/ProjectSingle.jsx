@@ -71,7 +71,7 @@ export const ProjectSingle = ({
 
 	return (
 		<>
-			<Head data={meta} />
+			<Head data={meta} title={title} />
 			<main className={styles.main}>
 				<BackgroundTransition>
 					<div
