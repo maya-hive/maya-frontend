@@ -1,0 +1,41 @@
+name: Continues Delivery
+on:
+  push:
+    branches: [master]
+
+  repository_dispatch:
+    types: [Deploy Production]
+
+jobs:
+  Build-Production-Code:
+    name: Run Production Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "The ${{ github.repository }} repository has been cloned to the runner."
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: executing production build command
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - run: |
+          npm install && npm run production
+      - name: Success
+        run: echo "📦 Build Status - ${{ job.status }}."
+
+      - name: Deploy To Production Server
+        run: echo "🆗 Production build status - ${{ job.status }}."
+      - name: Transporting
+        env:
+          DESTINATION: '${{ secrets.USERNAME }}@${{ secrets.HOSTNAME }}:${{ secrets.SERVER_PATH }}'
+          DEPLOY_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "${{ env.DEPLOY_KEY }}" > deploy_key
+          chmod 600 ./deploy_key
+          rsync -chav --delete \
+            -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' \
+            ./build/* ${{ env.DESTINATION }}
+      - name: Success
+        run: echo "🚀 Deploy Status - ${{ job.status }}."
