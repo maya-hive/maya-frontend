@@ -1,5 +1,5 @@
 const API = process.env.NEXT_PUBLIC_API_ENTRY_POINT;
-const APP = process.env.NEXT_PUBLIC_APP_ENTRY_POINT;
+const OG_IMAGE = process.env.NEXT_PUBLIC_OG_IMAGE_ENTRY_POINT;
 
 export const home = `${API}/home`;
 export const theme = `${API}/theme`;
@@ -20,4 +20,4 @@ export const enquiry = `${API}/inquiry`;
 export const careersApplication = `${API}/careers-application`;
 export const compatibilitiesApplication = `${API}/compatibilities-application`;
 export const projectSingle = `${API}/project?slug=`;
-export const ogImage = `${APP}/api/og-image?title=`;
+export const ogImage = `${OG_IMAGE}/og-image?title=`;
