@@ -1,21 +1,23 @@
-const prefix = process.env.NEXT_PUBLIC_API_ENTRY_POINT;
+const API = process.env.NEXT_PUBLIC_API_ENTRY_POINT;
+const APP = process.env.NEXT_PUBLIC_APP_ENTRY_POINT;
 
-export const home = `${prefix}/home`;
-export const theme = `${prefix}/theme`;
-export const about = `${prefix}/about`;
-export const clients = `${prefix}/clients`;
-export const contact = `${prefix}/contact`;
-export const careers = `${prefix}/careers`;
-export const notfound = `${prefix}/notfound`;
-export const portfolio = `${prefix}/portfolio`;
+export const home = `${API}/home`;
+export const theme = `${API}/theme`;
+export const about = `${API}/about`;
+export const clients = `${API}/clients`;
+export const contact = `${API}/contact`;
+export const careers = `${API}/careers`;
+export const notfound = `${API}/notfound`;
+export const portfolio = `${API}/portfolio`;
 
-export const projects = `${prefix}/projects`;
-export const testimonials = `${prefix}/testimonials`;
-export const compatibilities = `${prefix}/compatibilities`;
-export const projectCategories = `${prefix}/project-categories`;
-export const projectTechnologies = `${prefix}/project-technologies`;
+export const projects = `${API}/projects`;
+export const testimonials = `${API}/testimonials`;
+export const compatibilities = `${API}/compatibilities`;
+export const projectCategories = `${API}/project-categories`;
+export const projectTechnologies = `${API}/project-technologies`;
 
-export const enquiry = `${prefix}/inquiry`;
-export const careersApplication = `${prefix}/careers-application`;
-export const compatibilitiesApplication = `${prefix}/compatibilities-application`;
-export const projectSingle = `${prefix}/project?slug=`;
+export const enquiry = `${API}/inquiry`;
+export const careersApplication = `${API}/careers-application`;
+export const compatibilitiesApplication = `${API}/compatibilities-application`;
+export const projectSingle = `${API}/project?slug=`;
+export const ogImage = `${APP}/api/og-image?title=`;

@@ -1,5 +1,7 @@
 import Meta from 'next/head';
 
+import { ogImage } from '@services';
+
 export const Head = props => {
 	const { data: propData } = props;
 
@@ -7,8 +9,7 @@ export const Head = props => {
 
 	const description = () => propData.description;
 
-	const image = () =>
-		`http://localhost:3000/api/og-image?title=${title().replace(/\s/g, '*')}`;
+	const image = () => ogImage + title().replace(/\s/g, '*');
 
 	const type = () => propData.type || 'website';
 
