@@ -35,6 +35,7 @@ export const BannerHome = ({ pageData, themeData }) => {
 							url={pageData.home_banner_media}
 							alt={pageData.home_banner_subtitle}
 							styles={styles.mediaWrapper}
+							loading={'eager'}
 							autoPlay={true}
 							loop={true}
 						/>

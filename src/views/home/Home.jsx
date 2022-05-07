@@ -10,6 +10,7 @@ import {
 	FeaturedTestimonial,
 	InBritain,
 	AnimateWrap,
+	Layout,
 } from '@components';
 
 export const Home = ({
@@ -19,7 +20,7 @@ export const Home = ({
 	projectsData,
 	testimonialsData,
 }) => (
-	<>
+	<Layout themeData={themeData}>
 		<Head data={pageData.meta} />
 		<main>
 			<AnimateWrap>
@@ -38,5 +39,5 @@ export const Home = ({
 				{/* <HomeMarquee pageData={pageData} /> */}
 			</BackgroundTransition>
 		</main>
-	</>
+	</Layout>
 );

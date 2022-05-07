@@ -6,10 +6,11 @@ import {
 	TeamMembers,
 	AboutGallery,
 	AnimateWrap,
+	Layout,
 } from '@components';
 
-export const About = ({ pageData }) => (
-	<>
+export const About = ({ pageData, themeData }) => (
+	<Layout themeData={themeData}>
 		<Head data={pageData.meta} />
 		<main>
 			<BackgroundTransition trigger={'+=300px top'}>
@@ -21,5 +22,5 @@ export const About = ({ pageData }) => (
 				</AnimateWrap>
 			</BackgroundTransition>
 		</main>
-	</>
+	</Layout>
 );

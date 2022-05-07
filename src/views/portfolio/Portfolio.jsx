@@ -9,10 +9,12 @@ import {
 	BackgroundTransition,
 	ProjectsFilter,
 	ProjectsList,
+	Layout,
 } from '@components';
 
 export const Portfolio = ({
 	pageData,
+	themeData,
 	projectsData,
 	projectCategoriesData,
 }) => {
@@ -35,7 +37,7 @@ export const Portfolio = ({
 	}, [mdDevice, pageData]);
 
 	return (
-		<>
+		<Layout themeData={themeData}>
 			<Head data={pageData.meta} />
 			<main>
 				<BackgroundTransition>
@@ -54,6 +56,6 @@ export const Portfolio = ({
 					</AnimateWrap>
 				</BackgroundTransition>
 			</main>
-		</>
+		</Layout>
 	);
 };

@@ -11,10 +11,12 @@ import {
 	VideoPlayer,
 	FlexibleMedia,
 	BackgroundTransition,
+	Layout,
 } from '@components';
 import { animations } from './animations';
 
 export const ProjectSingle = ({
+	themeData,
 	projectData: {
 		meta,
 		title,
@@ -27,7 +29,6 @@ export const ProjectSingle = ({
 		content,
 		categories_name,
 		digital,
-		themeData,
 		postTechnologies,
 		allTechnologies,
 	},
@@ -70,7 +71,7 @@ export const ProjectSingle = ({
 	}, [active, isHovered, video]);
 
 	return (
-		<>
+		<Layout themeData={themeData}>
 			<Head data={meta} title={title} />
 			<main className={styles.main}>
 				<BackgroundTransition>
@@ -175,6 +176,6 @@ export const ProjectSingle = ({
 					</Container>
 				</BackgroundTransition>
 			</main>
-		</>
+		</Layout>
 	);
 };

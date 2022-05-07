@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import Swal from 'sweetalert2';
 
 import styles from './PopupForm.module.scss';
-import { api, compatibilitiesApplication } from '@services';
+import { compatibilitiesApplication } from '@services';
 import { Submit } from '@components';
 
 export const PopupForm = ({
@@ -82,8 +82,15 @@ export const PopupForm = ({
 			allowOutsideClick: false,
 		});
 
-		api
-			.post(compatibilitiesApplication, { ...formData })
+		fetch(compatibilitiesApplication, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ ...formData }),
+		})
+			.then(res => res.json())
 			.then(({ data }) => {
 				setTimeout(() => {
 					setIsLoading(false);

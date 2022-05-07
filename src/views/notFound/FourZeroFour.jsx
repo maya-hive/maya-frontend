@@ -1,9 +1,9 @@
-import { NotFound, Head } from '@components';
+import { NotFound, Head, Layout } from '@components';
 import { headerTheme } from './FourZeroFour.styles.js';
 import { styleToString } from '@helpers';
 
-export const FourZeroFour = ({ pageData }) => (
-	<>
+export const FourZeroFour = ({ pageData, themeData }) => (
+	<Layout themeData={themeData}>
 		<Head
 			data={pageData.meta}
 			style={
@@ -12,5 +12,5 @@ export const FourZeroFour = ({ pageData }) => (
 			}
 		/>
 		<NotFound pageData={pageData} />
-	</>
+	</Layout>
 );

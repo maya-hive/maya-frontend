@@ -1,10 +1,11 @@
 import { fetchData } from '@helpers';
-import { projects, projectSingle } from '@services';
+import { projects, projectSingle, theme } from '@services';
 
 export const getStaticProps = async ({ params: { slug } }) => {
 	const { response: projectData } = await fetchData(projectSingle + slug);
+	const { response: themeData } = await fetchData(theme);
 
-	return { props: { projectData } };
+	return { props: { projectData, themeData } };
 };
 
 export const getStaticPaths = async () => {

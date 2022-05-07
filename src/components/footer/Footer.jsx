@@ -1,14 +1,10 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { useContext } from 'react';
 
 import styles from './Footer.module.scss';
 import { Address, Nav, Small } from './index';
-import { ThemeContext } from '@contexts';
 import { Form } from '@components';
 
-export const Footer = () => {
-	const themeData = useContext(ThemeContext);
-
+export const Footer = ({ themeData }) => {
 	return (
 		<footer className={styles.main}>
 			<Container>

@@ -3,10 +3,11 @@ import {
 	BackgroundTransition,
 	CurrentVacancies,
 	AnimateWrap,
+	Layout,
 } from '@components';
 
 export const Careers = ({ pageData, themeData }) => (
-	<>
+	<Layout themeData={themeData}>
 		<Head data={pageData.meta} />
 		<main>
 			<BackgroundTransition>
@@ -15,5 +16,5 @@ export const Careers = ({ pageData, themeData }) => (
 				</AnimateWrap>
 			</BackgroundTransition>
 		</main>
-	</>
+	</Layout>
 );

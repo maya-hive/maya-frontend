@@ -1,8 +1,9 @@
 import { fetchData } from '@helpers';
-import { notfound } from '@services';
+import { notfound, theme } from '@services';
 
 export const getStaticProps = async () => {
 	const { response: pageData } = await fetchData(notfound);
+	const { response: themeData } = await fetchData(theme);
 
-	return { props: { pageData } };
+	return { props: { pageData, themeData } };
 };

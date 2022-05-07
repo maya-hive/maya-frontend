@@ -60,7 +60,9 @@ export const animations = (
 			ease: Expo.easeInOut,
 		});
 
-		headerElem.style.removeProperty('background');
-		headerElem.style.removeProperty('color');
+		if (headerElem) {
+			headerElem.style.removeProperty('background');
+			headerElem.style.removeProperty('color');
+		}
 	}
 };

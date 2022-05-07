@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import styles from './ImgFrame.module.scss';
 
 export const ImgFrame = forwardRef(
-	({ url, alt, onClick, styles: propStyles, style }, ref) => (
+	({ url, alt, onClick, styles: propStyles, style, loading }, ref) => (
 		<>
 			{url && (
 				<div className={`${styles.main} ${propStyles || ''}`}>
@@ -11,7 +11,7 @@ export const ImgFrame = forwardRef(
 						alt={alt}
 						ref={ref}
 						style={style}
-						loading={'lazy'}
+						loading={loading ? loading : 'lazy'}
 						onClick={onClick}
 					/>
 				</div>

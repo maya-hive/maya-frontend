@@ -1,15 +1,12 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useRouter } from 'next/router';
 
 import styles from './Header.module.scss';
-import { ThemeContext } from '@contexts';
 import { useScrollBlock } from '@hooks';
 import { Nav } from './index';
 
-export const Header = () => {
-	const themeData = useContext(ThemeContext);
-
+export const Header = ({ themeData }) => {
 	const [isOpen, setOpen] = useState(false);
 
 	const [blockScroll, allowScroll] = useScrollBlock();

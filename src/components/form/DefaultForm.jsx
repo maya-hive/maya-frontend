@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 import styles from './DefaultForm.module.scss';
 import { useCursorHandlers } from '@hooks';
-import { api, enquiry } from '@services';
+import { enquiry } from '@services';
 import { Submit } from '@components';
 
 export const DefaultForm = ({
@@ -57,8 +57,15 @@ export const DefaultForm = ({
 			allowOutsideClick: false,
 		});
 
-		api
-			.post(enquiry, { ...formData })
+		fetch(enquiry, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ ...formData }),
+		})
+			.then(res => res.json())
 			.then(({ data }) => {
 				setTimeout(() => {
 					setIsLoading(false);

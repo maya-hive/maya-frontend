@@ -3,12 +3,13 @@ import {
 	CompatibilitiesHeader,
 	CompatibilitiesList,
 	BackgroundTransition,
+	Layout,
 } from '@components';
 import { styleToString } from '@helpers';
 import { headerTheme } from './Compatibilities.styles';
 
-export const Compatibilities = ({ pageData }) => (
-	<>
+export const Compatibilities = ({ pageData, themeData }) => (
+	<Layout themeData={themeData}>
 		<Head data={pageData.meta} style={styleToString(headerTheme)} />
 		<main>
 			<BackgroundTransition>
@@ -16,5 +17,5 @@ export const Compatibilities = ({ pageData }) => (
 				<CompatibilitiesList pageData={pageData} />
 			</BackgroundTransition>
 		</main>
-	</>
+	</Layout>
 );
