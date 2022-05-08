@@ -36,7 +36,7 @@ export const Home = ({
 					pageData={pageData}
 					testimonialsData={testimonialsData}
 				/>
-				{/* <HomeMarquee pageData={pageData} /> */}
+				<HomeMarquee pageData={pageData} />
 			</BackgroundTransition>
 		</main>
 	</Layout>
