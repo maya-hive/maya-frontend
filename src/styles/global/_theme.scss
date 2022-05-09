@@ -3,6 +3,10 @@
 @use 'styles/config/mixins' as *;
 @use 'styles/global/extends' as *;
 
+* {
+	cursor: none;
+}
+
 .sparticles {
 	top: 0;
 	left: 0;

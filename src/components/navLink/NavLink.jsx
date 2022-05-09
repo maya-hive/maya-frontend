@@ -1,20 +1,21 @@
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+import { useCursorHandlers } from '@hooks';
 
 export const NavLink = ({ children, href, activeStyle }) => {
-	const router = useRouter();
+	const { asPath } = useRouter();
+	const cursorHandlers = useCursorHandlers();
 
 	const style = {
-		color: router.asPath === href ? activeStyle : null,
-	};
-
-	const handleClick = e => {
-		e.preventDefault();
-		router.push(href);
+		color: asPath === href + '/' || asPath === href ? activeStyle : null,
 	};
 
 	return (
-		<a href={href} onClick={handleClick} style={style}>
-			{children}
-		</a>
+		<Link href={href} passHref={true}>
+			<div {...cursorHandlers} style={style}>
+				{children}
+			</div>
+		</Link>
 	);
 };
