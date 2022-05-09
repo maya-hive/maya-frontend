@@ -9,7 +9,7 @@ export const Head = props => {
 
 	const description = () => propData.description;
 
-	const image = () => ogImage + title().replace(/\s/g, '*');
+	const image = () => ogImage + encodeURIComponent(title());
 
 	const type = () => propData.type || 'website';
 

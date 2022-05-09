@@ -22,7 +22,7 @@ export const CompatibilitiesHeader = ({ pageData }) => {
 								<Anchor
 									key={index}
 									className={styles.item}
-									href={`#${name.replace(/\s/g, '')}`}
+									href={`#${encodeURIComponent(name)}`}
 									{...cursorHandlers}>
 									<ImgFrame styles={styles.icon} url={icon} alt={name} />
 									<h3>{name}</h3>

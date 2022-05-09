@@ -10,7 +10,7 @@ export const CompatibilitiesList = ({ pageData }) => (
 				({ name, icon, tagline, services }, index) => (
 					<div
 						className={styles.category}
-						id={name.replace(/\s/g, '')}
+						id={decodeURIComponent(name)}
 						key={index}>
 						<Row>
 							<Col sm={12} md={6} lg={6}>

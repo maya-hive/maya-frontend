@@ -1,5 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import { useCallback, useEffect, useRef } from 'react';
+import { gsap, Power4 } from 'gsap/all';
 
 import styles from './FeaturedProjectItem.module.scss';
 import { animations, ArrowSvg } from './index';
@@ -44,15 +45,40 @@ export const FeaturedProjectItem = ({
 	);
 
 	useEffect(() => {
+		let tl = gsap.timeline({ repeat: -1 });
+
 		let cursorElem = document.querySelector('.cursorInner');
 
 		if (!cursorElem) return;
 
 		if (isHovering) {
-			cursorElem.innerHTML = '<i class="fas fa-eye"/>';
-		} else {
 			cursorElem.innerHTML = null;
+		} else {
+			cursorElem.classList.add('playerHovered');
+			cursorElem.innerHTML = '<i class="arrowAnim fas fa-arrow-right"/>';
 		}
+
+		tl.fromTo(
+			'.arrowAnim',
+			{
+				left: '0px',
+			},
+			{
+				left: '30px',
+				duration: 0.5,
+				ease: Power4.easeIn,
+			}
+		).fromTo(
+			'.arrowAnim',
+			{
+				left: '-30px',
+			},
+			{
+				left: '0px',
+				duration: 0.8,
+				ease: Power4.easeOut,
+			}
+		);
 	}, [isHovering]);
 
 	useEffect(() => {
@@ -62,9 +88,9 @@ export const FeaturedProjectItem = ({
 
 	return (
 		<div key={index} className={styles.main}>
-			<div className={styles.contentWrapper} ref={setTitleRef}>
+			<div className={styles.contentWrapper} ref={setTitleRef && anchorRef}>
 				<h4 className={styles.category}>{categories_name[0]}</h4>
-				<Anchor to={`/portfolio/project/${slug}`} ref={anchorRef}>
+				<Anchor to={`/portfolio/project/${slug}`}>
 					<h3 className={styles.title}>{title}</h3>
 				</Anchor>
 				<Anchor to={`/portfolio/project/${slug}`} className={styles.link}>
