@@ -6,6 +6,8 @@ import { ogImage } from '@services';
 export const Head = props => {
 	const { data: propData } = props;
 
+	const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
+
 	const title = () => (props.title ? props.title : propData.title);
 
 	const description = () => propData.description;
@@ -39,7 +41,7 @@ export const Head = props => {
 			</Meta>
 
 			<Script
-				src="https://www.googletagmanager.com/gtag/js?id=UA-858675-29"
+				src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
 				strategy="afterInteractive"
 			/>
 
@@ -47,7 +49,7 @@ export const Head = props => {
 				{`window.dataLayer = window.dataLayer || [];
 					function gtag(){window.dataLayer.push(arguments);} 
 					gtag('js', new Date()); 
-					gtag('config', 'UA-858675-29');`}
+					gtag('config', '${GTAG_ID}');`}
 			</Script>
 		</>
 	);
