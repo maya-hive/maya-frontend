@@ -4,7 +4,6 @@ import Sparticles from 'sparticles';
 import { particleConfig } from './particleConfig';
 import { useMediaQuery } from '@hooks';
 import {
-	Head,
 	AnimateWrap,
 	BackgroundTransition,
 	ProjectsFilter,
@@ -37,8 +36,7 @@ export const Portfolio = ({
 	}, [mdDevice, pageData]);
 
 	return (
-		<Layout themeData={themeData}>
-			<Head data={pageData.meta} />
+		<Layout themeData={themeData} meta={pageData.meta}>
 			<main>
 				<BackgroundTransition>
 					<AnimateWrap>

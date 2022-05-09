@@ -1,5 +1,4 @@
 import {
-	Head,
 	BannerHome,
 	BrandsCarousel,
 	Introduction,
@@ -20,8 +19,7 @@ export const Home = ({
 	projectsData,
 	testimonialsData,
 }) => (
-	<Layout themeData={themeData}>
-		<Head data={pageData.meta} />
+	<Layout themeData={themeData} meta={pageData.meta}>
 		<main>
 			<AnimateWrap>
 				<BannerHome pageData={pageData} themeData={themeData} />

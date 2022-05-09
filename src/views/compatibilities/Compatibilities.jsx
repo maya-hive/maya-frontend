@@ -1,16 +1,13 @@
 import {
-	Head,
 	CompatibilitiesHeader,
 	CompatibilitiesList,
 	BackgroundTransition,
 	Layout,
 } from '@components';
-import { styleToString } from '@helpers';
 import { headerTheme } from './Compatibilities.styles';
 
 export const Compatibilities = ({ pageData, themeData }) => (
-	<Layout themeData={themeData}>
-		<Head data={pageData.meta} style={styleToString(headerTheme)} />
+	<Layout themeData={themeData} meta={pageData.meta} headerTheme={headerTheme}>
 		<main>
 			<BackgroundTransition>
 				<CompatibilitiesHeader pageData={pageData} />

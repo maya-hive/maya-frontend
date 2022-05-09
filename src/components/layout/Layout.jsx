@@ -1,8 +1,9 @@
-import { Header, Footer } from '@components';
-import { Favicon } from 'components/favicon';
 import { useEffect } from 'react';
 
-export const Layout = ({ children, themeData }) => {
+import { Head, Header, Footer, Favicon } from '@components';
+import { styleToString } from '@helpers';
+
+export const Layout = ({ children, themeData, title, meta, headerTheme }) => {
 	useEffect(() => {
 		document.body.style.setProperty(
 			'--primary-color',
@@ -30,6 +31,7 @@ export const Layout = ({ children, themeData }) => {
 
 	return (
 		<>
+			<Head data={meta} title={title} style={styleToString(headerTheme)} />
 			<Header themeData={themeData} />
 			<Favicon themeData={themeData} />
 			{children}

@@ -1,5 +1,4 @@
 import {
-	Head,
 	BackgroundTransition,
 	InquiryForm,
 	AnimateWrap,
@@ -7,8 +6,7 @@ import {
 } from '@components';
 
 export const Contact = ({ pageData, themeData }) => (
-	<Layout themeData={themeData}>
-		<Head data={pageData.meta} />
+	<Layout themeData={themeData} meta={pageData.meta}>
 		<BackgroundTransition>
 			<AnimateWrap>
 				<InquiryForm pageData={pageData} themeData={themeData} />

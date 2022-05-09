@@ -12,7 +12,7 @@ export const NavLink = ({ children, href, activeStyle }) => {
 	};
 
 	return (
-		<Link href={href} passHref={true}>
+		<Link href={href || ''} passHref={true}>
 			<div {...cursorHandlers} style={style}>
 				{children}
 			</div>

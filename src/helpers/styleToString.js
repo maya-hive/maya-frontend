@@ -1,5 +1,7 @@
-export const styleToString = style =>
-	Object.keys(style).reduce(
+export const styleToString = style => {
+	if (!style) return;
+
+	return Object.keys(style).reduce(
 		(acc, key) =>
 			acc +
 			key
@@ -11,3 +13,4 @@ export const styleToString = style =>
 			';',
 		''
 	);
+};

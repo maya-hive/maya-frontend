@@ -1,5 +1,4 @@
 import {
-	Head,
 	AboutDescription,
 	BackgroundTransition,
 	InnovationTimeline,
@@ -10,8 +9,7 @@ import {
 } from '@components';
 
 export const About = ({ pageData, themeData }) => (
-	<Layout themeData={themeData}>
-		<Head data={pageData.meta} />
+	<Layout themeData={themeData} meta={pageData.meta}>
 		<main>
 			<BackgroundTransition trigger={'+=300px top'}>
 				<AnimateWrap>

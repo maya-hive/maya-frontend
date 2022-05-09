@@ -1,4 +1,5 @@
 import Meta from 'next/head';
+import Script from 'next/script';
 
 import { ogImage } from '@services';
 
@@ -18,22 +19,36 @@ export const Head = props => {
 	if (!propData) return null;
 
 	return (
-		<Meta htmlAttributes={{ lang: 'en' }}>
-			<title>{title()}</title>
-			<meta name="title" content={title()} />
-			<meta name="description" content={description()} />
+		<>
+			<Meta htmlAttributes={{ lang: 'en' }}>
+				<title>{title()}</title>
+				<meta name="title" content={title()} />
+				<meta name="description" content={description()} />
 
-			<meta property="og:type" content={type()} />
-			<meta property="og:title" content={title()} />
-			<meta property="og:description" content={description()} />
-			<meta property="og:image" content={image()} />
+				<meta property="og:type" content={type()} />
+				<meta property="og:title" content={title()} />
+				<meta property="og:description" content={description()} />
+				<meta property="og:image" content={image()} />
 
-			<meta property="twitter:card" content={card()} />
-			<meta property="twitter:title" content={title()} />
-			<meta property="twitter:description" content={description()} />
-			<meta property="twitter:image" content={image()} />
+				<meta property="twitter:card" content={card()} />
+				<meta property="twitter:title" content={title()} />
+				<meta property="twitter:description" content={description()} />
+				<meta property="twitter:image" content={image()} />
 
-			<style>{props.style && `header { ${props.style} }`}</style>
-		</Meta>
+				<style>{props.style && `header { ${props.style} }`}</style>
+			</Meta>
+
+			<Script
+				src="https://www.googletagmanager.com/gtag/js?id=UA-858675-29"
+				strategy="afterInteractive"
+			/>
+
+			<Script id="google-analytics" strategy="afterInteractive">
+				{`window.dataLayer = window.dataLayer || [];
+					function gtag(){window.dataLayer.push(arguments);} 
+					gtag('js', new Date()); 
+					gtag('config', 'UA-858675-29');`}
+			</Script>
+		</>
 	);
 };
