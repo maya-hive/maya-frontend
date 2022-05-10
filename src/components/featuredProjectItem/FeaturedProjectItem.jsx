@@ -94,10 +94,10 @@ export const FeaturedProjectItem = ({
 					<h3 className={styles.title}>{title}</h3>
 				</Anchor>
 				<Anchor to={`/portfolio/project/${slug}`} className={styles.link}>
-					<a>
+					<div>
 						<p>{pageData.home_portfolio_postlinkname}</p>
 						<ArrowSvg className={styles.arrow} />
-					</a>
+					</div>
 				</Anchor>
 			</div>
 			<div className={styles.mediaWrap} ref={setMediaRef}>

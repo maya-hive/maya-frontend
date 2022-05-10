@@ -41,6 +41,11 @@ export const Head = props => {
 			</Meta>
 
 			<Script
+				src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+				strategy="afterInteractive"
+			/>
+
+			<Script
 				src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
 				strategy="afterInteractive"
 			/>

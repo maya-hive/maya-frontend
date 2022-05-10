@@ -109,6 +109,10 @@
 		}
 
 		.link {
+			div {
+				display: flex;
+			}
+
 			&:hover {
 				p {
 					color: var.$primary-color;

@@ -34,6 +34,7 @@ export const BannerHome = ({ pageData, themeData }) => {
 						<FlexibleMedia
 							url={pageData.home_banner_media}
 							alt={pageData.home_banner_subtitle}
+							poster={pageData.home_banner_poster}
 							styles={styles.mediaWrapper}
 							loading={'eager'}
 							autoPlay={true}
