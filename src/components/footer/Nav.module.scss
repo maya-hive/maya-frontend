@@ -152,6 +152,29 @@
 		}
 	}
 
+	.bestweb {
+		width: 130px;
+		height: 130px;
+		border: 0;
+		margin: 20px 22% 40px auto;
+
+		@media (max-width: 1400px) and (min-width: 1200px) {
+			margin: 20px 8% 40px auto;
+		}
+
+		@media (max-width: 1200px) and (min-width: 992px) {
+			margin: 20px 0 40px auto;
+		}
+
+		@include smScreen {
+			margin: 20px 0 40px 0;
+		}
+
+		@include xsScreen {
+			margin: 70px auto 30px;
+		}
+	}
+
 	.socials {
 		display: flex;
 		margin-bottom: 0;

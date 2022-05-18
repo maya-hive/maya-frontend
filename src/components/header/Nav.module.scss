@@ -72,11 +72,6 @@
 			}
 
 			a {
-				list-style: none;
-				text-decoration: none;
-				color: unset;
-				display: block;
-
 				&:hover {
 					color: var.$primary-color;
 				}
