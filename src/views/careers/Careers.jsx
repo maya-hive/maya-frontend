@@ -5,8 +5,8 @@ import {
 	Layout,
 } from '@components';
 
-export const Careers = ({ pageData, themeData }) => (
-	<Layout themeData={themeData} meta={pageData.meta}>
+export const Careers = ({ pageData, themeData, ogImagePath }) => (
+	<Layout themeData={themeData} meta={pageData.meta} ogImagePath={ogImagePath}>
 		<main>
 			<BackgroundTransition>
 				<AnimateWrap>

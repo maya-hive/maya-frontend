@@ -1,5 +1,11 @@
-import { fetchData } from '@helpers';
-import { portfolio, projectCategories, projects, theme } from '@services';
+import { fetchData, postData } from '@helpers';
+import {
+	ogImage,
+	portfolio,
+	projectCategories,
+	projects,
+	theme,
+} from '@services';
 
 export const getStaticProps = async () => {
 	const { response: pageData } = await fetchData(portfolio);
@@ -9,7 +15,19 @@ export const getStaticProps = async () => {
 		projectCategories
 	);
 
+	const {
+		response: {
+			data: { path: ogImagePath },
+		},
+	} = await postData(ogImage, pageData.meta.title);
+
 	return {
-		props: { pageData, themeData, projectsData, projectCategoriesData },
+		props: {
+			pageData,
+			themeData,
+			projectsData,
+			projectCategoriesData,
+			ogImagePath,
+		},
 	};
 };

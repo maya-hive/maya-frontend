@@ -8,8 +8,8 @@ import {
 	Layout,
 } from '@components';
 
-export const About = ({ pageData, themeData }) => (
-	<Layout themeData={themeData} meta={pageData.meta}>
+export const About = ({ pageData, themeData, ogImagePath }) => (
+	<Layout themeData={themeData} meta={pageData.meta} ogImagePath={ogImagePath}>
 		<main>
 			<BackgroundTransition trigger={'+=300px top'}>
 				<AnimateWrap>

@@ -1,8 +1,6 @@
 import Meta from 'next/head';
 import Script from 'next/script';
 
-import { ogImage } from '@services';
-
 export const Head = props => {
 	const { data: propData } = props;
 
@@ -12,7 +10,7 @@ export const Head = props => {
 
 	const description = () => propData.description;
 
-	const image = () => ogImage + encodeURIComponent(title());
+	const image = () => props.ogImagePath;
 
 	const type = () => propData.type || 'website';
 

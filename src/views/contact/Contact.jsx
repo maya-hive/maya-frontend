@@ -5,8 +5,8 @@ import {
 	Layout,
 } from '@components';
 
-export const Contact = ({ pageData, themeData }) => (
-	<Layout themeData={themeData} meta={pageData.meta}>
+export const Contact = ({ pageData, themeData, ogImagePath }) => (
+	<Layout themeData={themeData} meta={pageData.meta} ogImagePath={ogImagePath}>
 		<BackgroundTransition>
 			<AnimateWrap>
 				<InquiryForm pageData={pageData} themeData={themeData} />

@@ -16,6 +16,7 @@ export const Portfolio = ({
 	themeData,
 	projectsData,
 	projectCategoriesData,
+	ogImagePath,
 }) => {
 	const [filter, setFilter] = useState('all');
 
@@ -36,7 +37,10 @@ export const Portfolio = ({
 	}, [mdDevice, pageData]);
 
 	return (
-		<Layout themeData={themeData} meta={pageData.meta}>
+		<Layout
+			ogImagePath={ogImagePath}
+			themeData={themeData}
+			meta={pageData.meta}>
 			<main>
 				<BackgroundTransition>
 					<AnimateWrap>

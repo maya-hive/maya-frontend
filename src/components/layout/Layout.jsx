@@ -3,7 +3,14 @@ import { useEffect } from 'react';
 import { Head, Header, Footer, Favicon } from '@components';
 import { styleToString } from '@helpers';
 
-export const Layout = ({ children, themeData, title, meta, headerTheme }) => {
+export const Layout = ({
+	headerTheme,
+	ogImagePath,
+	themeData,
+	children,
+	title,
+	meta,
+}) => {
 	useEffect(() => {
 		document.body.style.setProperty(
 			'--primary-color',
@@ -31,7 +38,12 @@ export const Layout = ({ children, themeData, title, meta, headerTheme }) => {
 
 	return (
 		<>
-			<Head data={meta} title={title} style={styleToString(headerTheme)} />
+			<Head
+				data={meta}
+				title={title}
+				ogImagePath={ogImagePath}
+				style={styleToString(headerTheme)}
+			/>
 			<Header themeData={themeData} />
 			<Favicon themeData={themeData} />
 			{children}
