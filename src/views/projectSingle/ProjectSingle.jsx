@@ -15,8 +15,9 @@ import {
 import { animations } from './animations';
 
 export const ProjectSingle = ({
-	themeData,
+	projectsTechnologiesData,
 	ogImagePath,
+	themeData,
 	projectData: {
 		meta,
 		title,
@@ -29,8 +30,7 @@ export const ProjectSingle = ({
 		content,
 		categories_name,
 		digital,
-		postTechnologies,
-		allTechnologies,
+		technologies,
 	},
 }) => {
 	const [active, setActive] = useState(false);
@@ -89,10 +89,10 @@ export const ProjectSingle = ({
 								</h3>
 								<h1 style={color ? { color: color } : null}>{title}</h1>
 								<div className={styles.iconRowWrap}>
-									{allTechnologies?.data &&
-										allTechnologies.data.map(
+									{projectsTechnologiesData?.data &&
+										projectsTechnologiesData.data.map(
 											({ term_id: ID, title, image }) =>
-												postTechnologies?.includes(ID) &&
+												technologies?.includes(ID) &&
 												image && (
 													<ImgFrame
 														key={ID}
