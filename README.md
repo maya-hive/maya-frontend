@@ -2,6 +2,16 @@
 
 This project was bootstrapped with [Create Next App](https://nextjs.org/docs/api-reference/create-next-app).
 
+## Github Actions Secrets (server credentials)
+
+```env
+PORT
+HOSTNAME
+USERNAME
+SERVER_PATH
+SSH_PRIVATE_KEY
+```
+
 ## Recommended Tools
 
 1. [ESLint](https://eslint.org/) - JavaScript linter
