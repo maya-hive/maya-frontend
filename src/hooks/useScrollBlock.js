@@ -35,7 +35,9 @@ export const useScrollBlock = (initialLocked = false) => {
 		if (locked !== initialLocked) {
 			setLocked(initialLocked);
 		}
-	}, [initialLocked, locked]);
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [locked]);
 
 	return [locked, setLocked];
 };
