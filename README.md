@@ -12,6 +12,15 @@ SERVER_PATH
 SSH_PRIVATE_KEY
 ```
 
+## Environment Variables
+
+```env
+NEXT_PUBLIC_API_ENTRY_POINT=https://domain.com/backend/wp-json/api/v1
+NEXT_PUBLIC_SITE_URL=https://site.com
+NEXT_PUBLIC_GTAG_ID=GOOGLE_TAG_ID
+```
+
+
 ## Recommended Tools
 
 1. [ESLint](https://eslint.org/) - JavaScript linter
@@ -31,20 +40,6 @@ Starts the development server and makes your application accessible at [http://l
 
 ```shell
 $ npm run production
-```
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-## Environment Variables
-
-Set the back-end entry point using the .env file.
-
-```env
-NEXT_PUBLIC_API_ENTRY_POINT=https://app.com/api
 ```
 
 ## Importing Components
