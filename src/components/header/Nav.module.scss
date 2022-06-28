@@ -60,6 +60,7 @@
 			list-style: none;
 			width: 60%;
 			margin-top: 1rem;
+			animation: fadeIn 5s;
 
 			@include mdScreen {
 				width: 20%;
@@ -81,6 +82,15 @@
 				-ms-transition: all 400ms ease;
 				-o-transition: all 400ms ease;
 				transition: all 400ms ease;
+			}
+
+			@keyframes fadeIn {
+				0% {
+					visibility: hidden;
+				}
+				100% {
+					visibility: visible;
+				}
 			}
 		}
 

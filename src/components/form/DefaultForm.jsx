@@ -66,17 +66,17 @@ export const DefaultForm = ({
 			body: JSON.stringify({ ...formData }),
 		})
 			.then(res => res.json())
-			.then(({ data }) => {
+			.then(({ message, type }) => {
 				setTimeout(() => {
 					setIsLoading(false);
 					MySwal.fire({
-						title: <p>{data.message}</p>,
-						icon: data.type,
+						title: <p>{message}</p>,
+						icon: type,
 						iconColor: primaryColor,
 						showConfirmButton: false,
 						timer: 3000,
 					});
-					if (data.type === 'success') {
+					if (type === 'success') {
 						setFormData({});
 						formRef.current.reset();
 					}

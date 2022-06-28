@@ -7,6 +7,7 @@ import styles from './Compatibilities.module.scss';
 import mascotHelmet from './assets/mascot-helmet.png';
 import mascotBody from './assets/mascot-body.png';
 
+import { compatibilitiesApplication } from '@services';
 import { useTouchDetect } from '@hooks';
 import {
 	Card,
@@ -181,6 +182,7 @@ export const Compatibilities = ({ pageData, themeData }) => {
 									<Form
 										popup
 										isPoppedData={isPoppedData}
+										endpoint={compatibilitiesApplication}
 										setIsPoppedData={setIsPoppedData}
 										headline={headline}
 										pageData={pageData}

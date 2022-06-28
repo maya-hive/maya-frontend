@@ -9,13 +9,13 @@ import { Nav } from './index';
 export const Header = ({ themeData }) => {
 	const [isOpen, setOpen] = useState(false);
 
-	const [blockScroll, allowScroll] = useScrollBlock();
+	const [locked, setLocked] = useScrollBlock();
 
 	const { pathname } = useRouter();
 
 	useEffect(
-		() => (isOpen ? blockScroll() : allowScroll()),
-		[allowScroll, blockScroll, isOpen]
+		() => (isOpen ? setLocked(locked) : setLocked(!locked)),
+		[isOpen, locked, setLocked]
 	);
 
 	useEffect(() => setOpen(false), [pathname]);

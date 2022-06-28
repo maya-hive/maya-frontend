@@ -1,43 +1,41 @@
-import { useRef } from 'react';
+import { useEffect, useState } from 'react';
 
-const safeDocument = typeof document !== 'undefined' ? document : {};
+import { useIsomorphicLayoutEffect } from '@hooks';
 
-export const useScrollBlock = () => {
-	const scrollBlocked = useRef();
-	const html = safeDocument.documentElement;
-	const { body } = safeDocument;
+export const useScrollBlock = (initialLocked = false) => {
+	const [locked, setLocked] = useState(initialLocked);
 
-	const blockScroll = () => {
-		if (!body || !body.style || scrollBlocked.current) return;
+	useIsomorphicLayoutEffect(() => {
+		if (!locked) {
+			return;
+		}
 
-		if (typeof window === 'undefined') return;
+		const originalOverflow = document.body.style.overflow;
+		const originalPaddingRight = document.body.style.paddingRight;
 
-		const scrollBarWidth = window.innerWidth - html.clientWidth;
-		const bodyPaddingRight =
-			parseInt(
-				window.getComputedStyle(body).getPropertyValue('padding-right')
-			) || 0;
+		document.body.style.overflow = 'hidden';
 
-		html.style.position = 'relative';
-		html.style.overflow = 'hidden';
-		body.style.position = 'relative';
-		body.style.overflow = 'hidden';
-		body.style.paddingRight = `${bodyPaddingRight + scrollBarWidth}px`;
+		const root = document.getElementById('___gatsby'); // or root
+		const scrollBarWidth = root ? root.offsetWidth - root.scrollWidth : 0;
 
-		scrollBlocked.current = true;
-	};
+		if (scrollBarWidth) {
+			document.body.style.paddingRight = `${scrollBarWidth}px`;
+		}
 
-	const allowScroll = () => {
-		if (!body || !body.style || !scrollBlocked.current) return;
+		return () => {
+			document.body.style.overflow = originalOverflow;
 
-		html.style.position = '';
-		html.style.overflow = '';
-		body.style.position = '';
-		body.style.overflow = '';
-		body.style.paddingRight = '';
+			if (scrollBarWidth) {
+				document.body.style.paddingRight = originalPaddingRight;
+			}
+		};
+	}, [locked]);
 
-		scrollBlocked.current = false;
-	};
+	useEffect(() => {
+		if (locked !== initialLocked) {
+			setLocked(initialLocked);
+		}
+	}, [initialLocked, locked]);
 
-	return [blockScroll, allowScroll];
+	return [locked, setLocked];
 };
