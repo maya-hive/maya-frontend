@@ -38,7 +38,7 @@ export const CustomCursor = () => {
 				style={{
 					left: clientX,
 					top: clientY,
-					opacity: isVisible && clientX > 1 ? 1 : 0,
+					opacity: isVisible ? 1 : 0,
 				}}
 			/>
 		</div>
