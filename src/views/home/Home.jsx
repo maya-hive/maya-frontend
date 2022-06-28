@@ -1,5 +1,4 @@
 import {
-	Head,
 	BannerHome,
 	BrandsCarousel,
 	Introduction,
@@ -10,6 +9,7 @@ import {
 	FeaturedTestimonial,
 	InBritain,
 	AnimateWrap,
+	Layout,
 } from '@components';
 
 export const Home = ({
@@ -18,9 +18,9 @@ export const Home = ({
 	clientsData,
 	projectsData,
 	testimonialsData,
+	ogImagePath,
 }) => (
-	<>
-		<Head data={pageData.meta} />
+	<Layout themeData={themeData} meta={pageData.meta} ogImagePath={ogImagePath}>
 		<main>
 			<AnimateWrap>
 				<BannerHome pageData={pageData} themeData={themeData} />
@@ -38,5 +38,5 @@ export const Home = ({
 				<HomeMarquee pageData={pageData} />
 			</BackgroundTransition>
 		</main>
-	</>
+	</Layout>
 );

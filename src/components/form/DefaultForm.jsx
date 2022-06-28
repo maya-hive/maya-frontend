@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 import styles from './DefaultForm.module.scss';
 import { useCursorHandlers } from '@hooks';
-import { api, enquiry } from '@services';
+import { enquiry } from '@services';
 import { Submit } from '@components';
 
 export const DefaultForm = ({
@@ -57,19 +57,26 @@ export const DefaultForm = ({
 			allowOutsideClick: false,
 		});
 
-		api
-			.post(enquiry, { ...formData })
-			.then(({ data }) => {
+		fetch(enquiry, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ ...formData }),
+		})
+			.then(res => res.json())
+			.then(({ message, type }) => {
 				setTimeout(() => {
 					setIsLoading(false);
 					MySwal.fire({
-						title: <p>{data.message}</p>,
-						icon: data.type,
+						title: <p>{message}</p>,
+						icon: type,
 						iconColor: primaryColor,
 						showConfirmButton: false,
 						timer: 3000,
 					});
-					if (data.type === 'success') {
+					if (type === 'success') {
 						setFormData({});
 						formRef.current.reset();
 					}

@@ -4,17 +4,20 @@ import { Col, Container, Row } from 'react-bootstrap';
 import styles from './ProjectSingle.module.scss';
 import { useHover, useMediaQuery, useTouchDetect } from '@hooks';
 import {
-	Head,
 	Anchor,
 	Button,
 	ImgFrame,
 	VideoPlayer,
 	FlexibleMedia,
 	BackgroundTransition,
+	Layout,
 } from '@components';
 import { animations } from './animations';
 
 export const ProjectSingle = ({
+	projectsTechnologiesData,
+	ogImagePath,
+	themeData,
 	projectData: {
 		meta,
 		title,
@@ -27,9 +30,7 @@ export const ProjectSingle = ({
 		content,
 		categories_name,
 		digital,
-		themeData,
-		postTechnologies,
-		allTechnologies,
+		technologies,
 	},
 }) => {
 	const [active, setActive] = useState(false);
@@ -70,8 +71,11 @@ export const ProjectSingle = ({
 	}, [active, isHovered, video]);
 
 	return (
-		<>
-			<Head data={meta} title={title} />
+		<Layout
+			ogImagePath={ogImagePath}
+			themeData={themeData}
+			title={title}
+			meta={meta}>
 			<main className={styles.main}>
 				<BackgroundTransition>
 					<div
@@ -85,10 +89,10 @@ export const ProjectSingle = ({
 								</h3>
 								<h1 style={color ? { color: color } : null}>{title}</h1>
 								<div className={styles.iconRowWrap}>
-									{allTechnologies?.data &&
-										allTechnologies.data.map(
+									{projectsTechnologiesData?.data &&
+										projectsTechnologiesData.data.map(
 											({ term_id: ID, title, image }) =>
-												postTechnologies?.includes(ID) &&
+												technologies?.includes(ID) &&
 												image && (
 													<ImgFrame
 														key={ID}
@@ -175,6 +179,6 @@ export const ProjectSingle = ({
 					</Container>
 				</BackgroundTransition>
 			</main>
-		</>
+		</Layout>
 	);
 };

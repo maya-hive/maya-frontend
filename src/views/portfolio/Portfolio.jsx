@@ -4,17 +4,19 @@ import Sparticles from 'sparticles';
 import { particleConfig } from './particleConfig';
 import { useMediaQuery } from '@hooks';
 import {
-	Head,
 	AnimateWrap,
 	BackgroundTransition,
 	ProjectsFilter,
 	ProjectsList,
+	Layout,
 } from '@components';
 
 export const Portfolio = ({
 	pageData,
+	themeData,
 	projectsData,
 	projectCategoriesData,
+	ogImagePath,
 }) => {
 	const [filter, setFilter] = useState('all');
 
@@ -35,8 +37,10 @@ export const Portfolio = ({
 	}, [mdDevice, pageData]);
 
 	return (
-		<>
-			<Head data={pageData.meta} />
+		<Layout
+			ogImagePath={ogImagePath}
+			themeData={themeData}
+			meta={pageData.meta}>
 			<main>
 				<BackgroundTransition>
 					<AnimateWrap>
@@ -54,6 +58,6 @@ export const Portfolio = ({
 					</AnimateWrap>
 				</BackgroundTransition>
 			</main>
-		</>
+		</Layout>
 	);
 };

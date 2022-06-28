@@ -1,8 +1,8 @@
 import { fetchData, postData } from '@helpers';
-import { about, ogImage, theme } from '@services';
+import { notfound, ogImage, theme } from '@services';
 
 export const getStaticProps = async () => {
-	const { response: pageData } = await fetchData(about);
+	const { response: pageData } = await fetchData(notfound);
 	const { response: themeData } = await fetchData(theme);
 
 	const {

@@ -46,6 +46,7 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 						url={themeData.theme_header_logo}
 						alt={themeData.theme_metadata_sitename}
 						styles={styles.logoWrapper}
+						loading={'eager'}
 					/>
 				</Anchor>
 				{!mdDevice && (

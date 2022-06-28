@@ -95,17 +95,3 @@
 		}
 	}
 }
-
-:export {
-	.modal-backdrop {
-		&.show {
-			opacity: 0.7 !important;
-			background-color: #000000;
-		}
-	}
-	.modal-dialog {
-		.modal-content {
-			background: var.$background-color;
-		}
-	}
-}

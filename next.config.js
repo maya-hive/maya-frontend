@@ -4,14 +4,6 @@
  * @type {import('next').NextConfig}
  */
 
-const path = require('path');
-
-const nextConfig = {
-	reactStrictMode: true,
-	basePath: null,
-	trailingSlash: true,
-};
-
 /** 
  * Transpile modules from node_modules using the Next.js Babel configuration.
 
@@ -20,4 +12,8 @@ const nextConfig = {
 
 const transpileModules = require('next-transpile-modules')(['gsap']);
 
-module.exports = transpileModules({ nextConfig });
+module.exports = transpileModules({
+	reactStrictMode: true,
+	trailingSlash: true,
+	basePath: '/mayalk',
+});

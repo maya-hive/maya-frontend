@@ -20,7 +20,7 @@ export const Anchor = forwardRef(
 		const cursorHandlers = useCursorHandlers();
 
 		return to ? (
-			<Link href={to} onClick={event}>
+			<Link href={to} passHref={true} onClick={event}>
 				<div
 					ref={ref}
 					style={customStyles}

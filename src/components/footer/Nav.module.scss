@@ -152,6 +152,32 @@
 		}
 	}
 
+	.bestweb {
+		position: fixed;
+		bottom: 35px;
+		right: 40px;
+		width: 100px;
+		height: 100px;
+		z-index: z('modal');
+		border: 0;
+
+		img {
+			transition: all 300ms ease;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			@include smScreen {
+				margin: 20px 0 40px 0;
+			}
+		}
+
+		@include xsScreen {
+			display: none;
+		}
+	}
+
 	.socials {
 		display: flex;
 		margin-bottom: 0;

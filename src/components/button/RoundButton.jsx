@@ -9,7 +9,7 @@ export const RoundButton = forwardRef(
 		const cursorHandlers = useCursorHandlers();
 
 		return to ? (
-			<Link href={to || ''}>
+			<Link href={to || ''} passHref={true}>
 				<button
 					className={`${styles.main} ${propStyles || ''} ${
 						secondary ? styles.secondary : styles.primary

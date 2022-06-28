@@ -3,11 +3,4 @@
 
 .main {
 	white-space: nowrap;
-
-	:hover {
-		:not(strong) {
-			-webkit-text-fill-color: var.$on-background-color;
-			-webkit-text-stroke-color: transparent;
-		}
-	}
 }

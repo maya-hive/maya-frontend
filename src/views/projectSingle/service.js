@@ -1,10 +1,28 @@
-import { fetchData } from '@helpers';
-import { projects, projectSingle } from '@services';
+import { fetchData, postData } from '@helpers';
+import {
+	ogImage,
+	projects,
+	projectSingle,
+	projectTechnologies,
+	theme,
+} from '@services';
 
 export const getStaticProps = async ({ params: { slug } }) => {
 	const { response: projectData } = await fetchData(projectSingle + slug);
+	const { response: projectsTechnologiesData } = await fetchData(
+		projectTechnologies
+	);
+	const { response: themeData } = await fetchData(theme);
 
-	return { props: { projectData } };
+	const {
+		response: {
+			data: { path: ogImagePath },
+		},
+	} = await postData(ogImage, projectData.title);
+
+	return {
+		props: { projectData, projectsTechnologiesData, themeData, ogImagePath },
+	};
 };
 
 export const getStaticPaths = async () => {

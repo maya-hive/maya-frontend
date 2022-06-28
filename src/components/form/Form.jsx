@@ -4,6 +4,7 @@ export const Form = ({
 	popup,
 	headline,
 	pageData,
+	endpoint,
 	fileInput,
 	themeData,
 	className,
@@ -21,6 +22,7 @@ export const Form = ({
 			pageData={pageData}
 			themeData={themeData}
 			headline={headline}
+			endpoint={endpoint}
 			fileInput={fileInput}
 		/>
 	) : (

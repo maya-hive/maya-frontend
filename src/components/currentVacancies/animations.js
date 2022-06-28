@@ -39,7 +39,7 @@ export const animations = (
 			top: '0px',
 			opacity: 1,
 			duration: 0.8,
-			delay: 1.2,
+			delay: 0.7,
 			ease: Power4.easeInOut,
 		});
 	} else {

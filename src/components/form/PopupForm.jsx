@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from 'react';
 import Swal from 'sweetalert2';
 
 import styles from './PopupForm.module.scss';
-import { api, compatibilitiesApplication } from '@services';
 import { Submit } from '@components';
 
 export const PopupForm = ({
 	headline,
 	fileInput,
+	endpoint,
 	isPoppedData,
 	setIsPoppedData,
 	themeData: {
@@ -82,19 +82,26 @@ export const PopupForm = ({
 			allowOutsideClick: false,
 		});
 
-		api
-			.post(compatibilitiesApplication, { ...formData })
-			.then(({ data }) => {
+		fetch(endpoint, {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ ...formData }),
+		})
+			.then(res => res.json())
+			.then(({ message, type }) => {
 				setTimeout(() => {
 					setIsLoading(false);
 					MySwal.fire({
-						title: <p>{data.message}</p>,
-						icon: data.type,
+						title: <p>{message}</p>,
+						icon: type,
 						iconColor: primaryColor,
 						showConfirmButton: false,
 						timer: 3000,
 					});
-					if (data.type === 'success') {
+					if (type === 'success') {
 						setFormData({});
 						setIsActive(false);
 						setIsPoppedData({});
