@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"start": "next start",
 		"production": "next build",
-		"postproduction": "next export -o build/",
+		"postproduction": "next-sitemap && next export -o build/",
 		"lint": "next lint"
 	},
 	"dependencies": {
@@ -32,6 +32,7 @@
 	"devDependencies": {
 		"eslint": "8.14.0",
 		"eslint-config-next": "12.1.5",
+		"next-sitemap": "^3.1.7",
 		"puppeteer": "^13.7.0",
 		"sass": "^1.51.0"
 	}
