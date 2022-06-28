@@ -15,5 +15,4 @@ const transpileModules = require('next-transpile-modules')(['gsap']);
 module.exports = transpileModules({
 	reactStrictMode: true,
 	trailingSlash: true,
-	basePath: '/mayalk',
 });
