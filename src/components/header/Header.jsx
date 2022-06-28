@@ -13,10 +13,8 @@ export const Header = ({ themeData }) => {
 
 	const { pathname } = useRouter();
 
-	useEffect(
-		() => (isOpen ? setLocked(locked) : setLocked(!locked)),
-		[isOpen, locked, setLocked]
-	);
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useEffect(() => (isOpen ? setLocked(locked) : setLocked(!locked)), [isOpen]);
 
 	useEffect(() => setOpen(false), [pathname]);
 

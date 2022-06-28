@@ -4,7 +4,7 @@
  * @type {import('next').NextConfig}
  */
 
-/** 
+/**
  * Transpile modules from node_modules using the Next.js Babel configuration.
 
  * @uses next-transpile-modules
