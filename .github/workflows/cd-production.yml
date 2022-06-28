@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '17'
       - run: |
-          npm install && npm run production
+          npm install --legacy-peer-deps && npm run production
       - name: Success
         run: echo "📦 Build Status - ${{ job.status }}."
 
