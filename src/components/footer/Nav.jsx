@@ -64,14 +64,6 @@ export const Nav = ({ themeData }) => {
 					</div>
 				</div>
 			</div>
-			<a
-				href={'https://www.vote.bestweb.lk/site/www_maya_lk'}
-				className={styles.bestweb}
-				rel={'noreferrer'}
-				target={'_blank'}
-				{...cursorHandlers}>
-				<img src={'https://www.bw2022.lk/vote4us.png'} alt={'best web logo'} />
-			</a>
 			<ul className={styles.socials}>
 				{themeData.theme_general_socials.map(({ name, icon, url }, index) => (
 					<li key={index}>
