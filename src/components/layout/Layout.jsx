@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { Head, Header, Footer, Favicon } from '@components';
+import { Head, Header, Footer, Favicon, Badge } from '@components';
 import { styleToString } from '@helpers';
 
 export const Layout = ({
@@ -46,6 +46,7 @@ export const Layout = ({
 			/>
 			<Header themeData={themeData} />
 			<Favicon themeData={themeData} />
+			<Badge />
 			{children}
 			<Footer themeData={themeData} />
 		</>

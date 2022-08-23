@@ -48,3 +48,4 @@ export * from './scrollRestore';
 export * from './animateWrap';
 export * from './navLink';
 export * from './layout';
+export * from './badge';

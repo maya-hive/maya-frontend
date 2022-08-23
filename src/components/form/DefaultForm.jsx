@@ -66,40 +66,34 @@ export const DefaultForm = ({
 			body: JSON.stringify({ ...formData }),
 		})
 			.then(res => res.json())
-			.then(({ message, type }) => {
+			.then(res => {
 				setTimeout(() => {
 					setIsLoading(false);
 					MySwal.fire({
-						title: <p>{message}</p>,
-						icon: type,
+						title: <p>{res.data ? res.data.message : res.message}</p>,
+						icon: res.type,
 						iconColor: primaryColor,
 						showConfirmButton: false,
 						timer: 3000,
 					});
-					if (type === 'success') {
+					if (res.type === 'success') {
 						setFormData({});
 						formRef.current.reset();
 					}
 				}, delay);
 			})
-			.catch(
-				({
-					response: {
-						data: { data },
-					},
-				}) => {
-					setTimeout(() => {
-						setIsLoading(false);
-						MySwal.fire({
-							title: data.errors ? data.errors[0] : 'Something Went Wrong',
-							icon: data.type,
-							iconColor: primaryColor,
-							showConfirmButton: false,
-							timer: 2000,
-						});
-					}, delay);
-				}
-			);
+			.catch(({ errors, type }) => {
+				setTimeout(() => {
+					setIsLoading(false);
+					MySwal.fire({
+						title: errors ? errors[0] : 'Something Went Wrong',
+						icon: type,
+						iconColor: primaryColor,
+						showConfirmButton: false,
+						timer: 2000,
+					});
+				}, delay);
+			});
 	};
 
 	useEffect(() => {
