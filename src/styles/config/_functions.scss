@@ -7,7 +7,7 @@
 * Calculate Z-Indexes by defined specificity z
 * @requires an array of z-indexes
 *
-* @use "@styles/config/functions"as *;
+* @use "styles/config/functions"as *;
 *
 * eg. .modal {
 *  z-index: z("modal");
