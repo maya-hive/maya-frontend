@@ -15,11 +15,7 @@ export const getStaticProps = async () => {
 		projectCategories
 	);
 
-	const {
-		response: {
-			data: { path: ogImagePath },
-		},
-	} = await postData(ogImage, pageData.meta.title);
+	const ogImagePath = 'https://www.maya.lk/backend/wp-content/uploads/2022/11/og-image.jpg';
 
 	return {
 		props: {
