@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
 	const { response: projectsData } = await fetchData(projects);
 	const { response: testimonialsData } = await fetchData(testimonials);
 
-	const ogImagePath = 'https://www.maya.lk/backend/wp-content/uploads/2022/11/og-image.jpg';
+	const ogImagePath = process.env.NEXT_OG_IMAGE;
 
 		return {
 		props: {
