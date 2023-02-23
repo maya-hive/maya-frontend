@@ -6,6 +6,7 @@
 		"dev": "next dev",
 		"start": "next start",
 		"development": "env-cmd -f .env.development next build",
+		"postdevelopment": "next-sitemap && next export -o build/",
 		"production": "next build",
 		"postproduction": "next-sitemap && next export -o build/",
 		"lint": "next lint"
