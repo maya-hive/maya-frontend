@@ -1,14 +1,14 @@
-name: Production Continues Delivery
+name: Develop Continues Delivery
 on:
   push:
-    branches: [master]
+    branches: [develop]
 
   repository_dispatch:
-    types: [Deploy Production]
+    types: [Deploy Develop]
 
 jobs:
-  Build-Production-Code:
-    name: Run Production Build
+  Build-develop-Code:
+    name: Run Develop Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,7 +16,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: executing production build command
+      - name: executing develop build command
         uses: actions/setup-node@v2
         with:
           node-version: "17"
@@ -25,12 +25,12 @@ jobs:
       - name: Success
         run: echo "📦 Build Status - ${{ job.status }}."
 
-      - name: Deploy To Production Server
-        run: echo "🆗 Production build status - ${{ job.status }}."
+      - name: Deploy To Develop Server
+        run: echo "🆗 Develop build status - ${{ job.status }}."
       - name: Transporting
         env:
-          DESTINATION: "${{ secrets.SERVER_PRODUCTION_USERNAME }}@${{ secrets.SERVER_PRODUCTION_HOSTNAME }}:${{ secrets.SERVER_PRODUCTION_PATH }}"
-          DEPLOY_KEY: ${{ secrets.SERVER_PRODUCTION_PRIVATE_KEY }}
+          DESTINATION: "${{ secrets.SERVER_DEVELOP_USERNAME }}@${{ secrets.SERVER_DEVELOP_HOSTNAME }}:${{ secrets.SERVER_DEVELOP_PATH }}"
+          DEPLOY_KEY: ${{ secrets.SERVER_DEVELOP_PRIVATE_KEY }}
         run: |
           echo "${{ env.DEPLOY_KEY }}" > deploy_key
           chmod 600 ./deploy_key
