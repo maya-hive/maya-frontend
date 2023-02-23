@@ -5,7 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"start": "next start",
-		"develop": "env-cmd -f .env.development next build",
+		"development": "env-cmd -f .env.development next build",
 		"production": "next build",
 		"postproduction": "next-sitemap && next export -o build/",
 		"lint": "next lint"
