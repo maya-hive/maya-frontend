@@ -15,4 +15,5 @@ const transpileModules = require('next-transpile-modules')(['gsap']);
 module.exports = transpileModules({
 	reactStrictMode: true,
 	trailingSlash: true,
+	basePath: process.env.NEXT_PUBLIC_BASE_PATH,
 });
