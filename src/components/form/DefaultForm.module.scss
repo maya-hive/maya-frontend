@@ -150,6 +150,17 @@
 		}
 	}
 
+	.error {
+		color: var.$error-color;
+		font-weight: 600;
+		font-size: 14px;
+		background: var.$error-surface-color;
+		padding: 8px 17px;
+		display: block;
+		border-radius: 2px;
+		margin-top: 10px;
+	}
+
 	.button {
 		margin-top: 40px;
 
