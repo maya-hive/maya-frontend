@@ -46,25 +46,25 @@ export const ProjectsSlider = ({ pageData, projectsData }) => {
 
 		if (isGrabbing) {
 			cursorElem.classList.add('playerHovered');
-			cursorElem.innerHTML = '<i class="arrowAnim fas fa-arrow-right"/>';
+			cursorElem.innerHTML = '<i class="arrowAnim fas fa-arrow-left"/>';
 
 			tl.fromTo(
 				'.arrowAnim',
 				{
-					left: '0px',
+					right: '0px',
 				},
 				{
-					left: '30px',
+					right: '30px',
 					duration: 0.5,
 					ease: Power4.easeIn,
 				}
 			).fromTo(
 				'.arrowAnim',
 				{
-					left: '-30px',
+					right: '-30px',
 				},
 				{
-					left: '0px',
+					right: '0px',
 					duration: 0.8,
 					ease: Power4.easeOut,
 				}

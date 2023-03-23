@@ -1,6 +1,9 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import withReactContent from 'sweetalert2-react-content';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { z } from 'zod';
 
 import styles from './DefaultForm.module.scss';
 import { useCursorHandlers } from '@hooks';
@@ -17,36 +20,32 @@ export const DefaultForm = ({
 }) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [primaryColor, setColor] = useState('');
-	const [formData, setFormData] = useState({});
-
-	const formRef = useRef(null);
 
 	const cursorHandlers = useCursorHandlers();
 
 	const MySwal = withReactContent(Swal);
 
+	const schema = z.object({
+		name: z.string().min(2).max(255),
+		email: z.string().email().min(2).max(255),
+		message: z.string().min(2).max(255),
+		phone: z.string().min(2).max(255),
+		services: z.any(),
+	});
+
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors },
+	} = useForm({
+		resolver: zodResolver(schema),
+		mode: 'onBlur',
+	});
+
 	const delay = 2_000;
 
-	const handleInput = e => {
-		e.preventDefault();
-		setFormData({
-			...formData,
-			[e.target.name]: e.target.value,
-		});
-	};
-
-	const handleCheckbox = e => {
-		e.preventDefault();
-		setFormData({
-			...formData,
-			services: formData.services
-				? [...formData.services, e.target.name]
-				: [e.target.name],
-		});
-	};
-
-	const handleFormSubmit = e => {
-		e.preventDefault();
+	const onSubmit = data => {
 		setIsLoading(true);
 		MySwal.fire({
 			imageUrl: themeData.theme_form_media.url,
@@ -63,7 +62,7 @@ export const DefaultForm = ({
 				Accept: 'application/json',
 				'Content-Type': 'application/json',
 			},
-			body: JSON.stringify({ ...formData }),
+			body: JSON.stringify({ ...data }),
 		})
 			.then(res => res.json())
 			.then(res => {
@@ -77,8 +76,7 @@ export const DefaultForm = ({
 						timer: 3000,
 					});
 					if (res.type === 'success') {
-						setFormData({});
-						formRef.current.reset();
+						reset();
 					}
 				}, delay);
 			})
@@ -101,47 +99,42 @@ export const DefaultForm = ({
 	}, [primaryColor]);
 
 	return (
-		<form className={`${styles.main} ${className || ''}`} ref={formRef}>
+		<form
+			className={`${styles.main} ${className || ''}`}
+			onSubmit={handleSubmit(onSubmit)}>
 			<h2>{headline}</h2>
 			<span className={styles.fieldGroup}>
 				<label htmlFor={'name'}>
 					{themeData.theme_general_form.name_label}
 				</label>
 				<input
-					id={'name'}
-					name={'name'}
 					type={'text'}
 					placeholder={themeData.theme_general_form.name_placeholder}
-					onInput={e => handleInput(e)}
-					required
+					{...register('name', { required: true })}
 				/>
 			</span>
+			{errors.name && <span className={styles.error}>Name is required</span>}
 			<span className={styles.fieldGroup}>
 				<label htmlFor={'email'}>
 					{themeData.theme_general_form.email_label}
 				</label>
 				<input
-					id={'email'}
-					name={'email'}
 					type={'email'}
 					placeholder={themeData.theme_general_form.email_placeholder}
-					onInput={e => handleInput(e)}
-					required
+					{...register('email', { required: true })}
 				/>
 			</span>
+			{errors.email && <span className={styles.error}>Email is required</span>}
 			<span className={styles.fieldGroup}>
 				<label htmlFor={'phone'}>
 					{themeData.theme_general_form.phone_label}
 				</label>
 				<input
-					id={'phone'}
-					type={'tel'}
-					name={'phone'}
-					pattern={null}
 					placeholder={themeData.theme_general_form.phone_placeholder}
-					onInput={e => handleInput(e)}
+					{...register('phone', { required: true })}
 				/>
 			</span>
+			{errors.phone && <span className={styles.error}>Phone is required</span>}
 			{toggleCompatiblities && (
 				<span className={`${styles.fieldGroup} ${styles.compatibilities}`}>
 					<label className={styles.mainLabel}>{labelCompatibilities}</label>
@@ -150,10 +143,9 @@ export const DefaultForm = ({
 							<Fragment key={index}>
 								<input
 									id={service.replace(/\s/g, '')}
-									name={service}
 									type={'checkbox'}
-									pattern={null}
-									onInput={e => handleCheckbox(e)}
+									value={service}
+									{...register(`services[${index}]`)}
 								/>
 								<label htmlFor={service.replace(/\s/g, '')} {...cursorHandlers}>
 									{service}
@@ -172,13 +164,13 @@ export const DefaultForm = ({
 					name={'message'}
 					placeholder={themeData.theme_general_form.message_placeholder}
 					rows={'4'}
-					onInput={e => handleInput(e)}
+					{...register('message', { required: true })}
 				/>
 			</span>
-			<Submit
-				className={styles.button}
-				isLoading={isLoading}
-				onClick={e => handleFormSubmit(e)}>
+			{errors.message && (
+				<span className={styles.error}>Message is required</span>
+			)}
+			<Submit className={styles.button} isLoading={isLoading}>
 				{submitValue}
 			</Submit>
 		</form>
