@@ -18,9 +18,8 @@ export const Home = ({
 	clientsData,
 	projectsData,
 	testimonialsData,
-	ogImagePath,
 }) => (
-	<Layout themeData={themeData} meta={pageData.meta} ogImagePath={ogImagePath}>
+	<Layout themeData={themeData} meta={pageData.meta}>
 		<main>
 			<AnimateWrap>
 				<BannerHome pageData={pageData} themeData={themeData} />

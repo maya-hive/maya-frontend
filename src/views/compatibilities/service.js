@@ -1,11 +1,9 @@
-import { fetchData, postData } from '@helpers';
-import { compatibilities, ogImage, theme } from '@services';
+import { fetchData } from '@helpers';
+import { compatibilities, theme } from '@services';
 
 export const getStaticProps = async () => {
 	const { response: pageData } = await fetchData(compatibilities);
 	const { response: themeData } = await fetchData(theme);
 
-	const ogImagePath = process.env.NEXT_OG_IMAGE;
-
-	return { props: { pageData, themeData, ogImagePath } };
+	return { props: { pageData, themeData } };
 };

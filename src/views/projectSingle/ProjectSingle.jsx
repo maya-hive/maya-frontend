@@ -16,7 +16,6 @@ import { animations } from './animations';
 
 export const ProjectSingle = ({
 	projectsTechnologiesData,
-	ogImagePath,
 	themeData,
 	projectData: {
 		meta,
@@ -71,11 +70,7 @@ export const ProjectSingle = ({
 	}, [active, isHovered, video]);
 
 	return (
-		<Layout
-			ogImagePath={ogImagePath}
-			themeData={themeData}
-			title={title}
-			meta={meta}>
+		<Layout themeData={themeData} title={title} meta={meta}>
 			<main className={styles.main}>
 				<BackgroundTransition>
 					<div

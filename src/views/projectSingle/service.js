@@ -1,6 +1,5 @@
-import { fetchData, postData } from '@helpers';
+import { fetchData } from '@helpers';
 import {
-	ogImage,
 	projects,
 	projectSingle,
 	projectTechnologies,
@@ -14,10 +13,8 @@ export const getStaticProps = async ({ params: { slug } }) => {
 	);
 	const { response: themeData } = await fetchData(theme);
 
-	const ogImagePath = process.env.NEXT_OG_IMAGE;
-
 	return {
-		props: { projectData, projectsTechnologiesData, themeData, ogImagePath },
+		props: { projectData, projectsTechnologiesData, themeData },
 	};
 };
 

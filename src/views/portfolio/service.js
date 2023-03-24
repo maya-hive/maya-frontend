@@ -1,6 +1,5 @@
-import { fetchData, postData } from '@helpers';
+import { fetchData } from '@helpers';
 import {
-	ogImage,
 	portfolio,
 	projectCategories,
 	projects,
@@ -15,15 +14,12 @@ export const getStaticProps = async () => {
 		projectCategories
 	);
 
-	const ogImagePath = process.env.NEXT_OG_IMAGE;
-
 	return {
 		props: {
 			pageData,
 			themeData,
 			projectsData,
 			projectCategoriesData,
-			ogImagePath,
 		},
 	};
 };

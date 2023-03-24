@@ -1,16 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { Head, Header, Footer, Favicon, Badge } from '@components';
 import { styleToString } from '@helpers';
 
-export const Layout = ({
-	headerTheme,
-	ogImagePath,
-	themeData,
-	children,
-	title,
-	meta,
-}) => {
+export const Layout = ({ headerTheme, themeData, children, title, meta }) => {
+	const [ogImage, setOgImage] = useState();
+
 	useEffect(() => {
 		document.body.style.setProperty(
 			'--primary-color',
@@ -32,6 +27,8 @@ export const Layout = ({
 			'--body-color',
 			themeData?.theme_appearance_body
 		);
+
+		setOgImage(themeData?.theme_metadata_ogimg);
 	}, [themeData]);
 
 	if (!themeData) return null;
@@ -41,7 +38,7 @@ export const Layout = ({
 			<Head
 				data={meta}
 				title={title}
-				ogImagePath={ogImagePath}
+				ogImagePath={ogImage}
 				style={styleToString(headerTheme)}
 			/>
 			<Header themeData={themeData} />

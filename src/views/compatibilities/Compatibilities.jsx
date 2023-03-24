@@ -6,12 +6,8 @@ import {
 } from '@components';
 import { headerTheme } from './Compatibilities.styles';
 
-export const Compatibilities = ({ pageData, themeData, ogImagePath }) => (
-	<Layout
-		ogImagePath={ogImagePath}
-		headerTheme={headerTheme}
-		themeData={themeData}
-		meta={pageData.meta}>
+export const Compatibilities = ({ pageData, themeData }) => (
+	<Layout headerTheme={headerTheme} themeData={themeData} meta={pageData.meta}>
 		<main>
 			<BackgroundTransition>
 				<CompatibilitiesHeader pageData={pageData} />
