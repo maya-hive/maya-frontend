@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react';
 import { gsap, Expo } from 'gsap';
-import { useRouter } from 'next/router';
 
 import styles from './Nav.module.scss';
 import { Anchor, Button, NavLink, ImgFrame } from '@components';
@@ -14,7 +13,6 @@ export const Nav = ({ themeData, isOpen, setOpen }) => {
 	const mdDevice = useMediaQuery('(max-width: 1200px)');
 	const smDevice = useMediaQuery('(max-width: 576px)');
 
-	const { pathname } = useRouter();
 	const cursorHandlers = useCursorHandlers();
 
 	useEffect(() => {

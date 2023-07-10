@@ -53,7 +53,7 @@
 
 		.navItems {
 			padding-left: 0;
-			display: flex;
+			display: none;
 			justify-content: space-around;
 			height: 100%;
 			align-items: center;
@@ -63,13 +63,19 @@
 			animation: fadeIn 5s;
 
 			@include mdScreen {
+				display: flex;
 				width: 20%;
 				justify-content: flex-end;
 			}
 
 			@include lgScreen {
+				display: flex;
 				width: 20%;
 				justify-content: flex-end;
+			}
+
+			@include xlScreen {
+				display: flex;
 			}
 
 			a {
@@ -100,16 +106,22 @@
 			align-items: center;
 
 			.cta {
-				display: flex;
+				display: none;
 				justify-content: space-around;
 				align-items: center;
 
 				@include mdScreen {
+					display: flex;
 					width: unset;
 				}
 
 				@include lgScreen {
+					display: flex;
 					width: unset;
+				}
+
+				@include xlScreen {
+					display: flex;
 				}
 
 				.button {

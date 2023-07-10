@@ -1,5 +1,5 @@
 {
-	"name": "maya-official-frontend",
+	"name": "maya-frontend",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -17,13 +17,13 @@
 		"env-cmd": "^10.1.0",
 		"framer-motion": "^6.3.2",
 		"gsap": "^3.10.4",
-		"next": "12.1.5",
+		"next": "^13.4.9",
 		"next-api-og-image": "^3.0.0",
-		"next-transpile-modules": "^9.0.0",
+		"next-transpile-modules": "^10.0.0",
 		"particles-bg": "^2.5.5",
-		"react": "18.0.0",
+		"react": "^18.2.0",
 		"react-bootstrap": "^2.3.0",
-		"react-dom": "18.0.0",
+		"react-dom": "^18.2.0",
 		"react-fast-marquee": "^1.3.1",
 		"react-hook-form": "^7.43.2",
 		"react-intersection-observer": "^9.1.0",
@@ -37,7 +37,7 @@
 	},
 	"devDependencies": {
 		"eslint": "8.14.0",
-		"eslint-config-next": "12.1.5",
+		"eslint-config-next": "^13.4.9",
 		"next-sitemap": "^3.1.7",
 		"sass": "^1.51.0"
 	}
