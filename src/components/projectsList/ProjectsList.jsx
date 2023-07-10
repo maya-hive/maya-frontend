@@ -7,14 +7,38 @@ const ProjectItem = lazy(() =>
 	import('@components').then(module => ({ default: module.ProjectItem }))
 );
 
-export const ProjectsList = ({ projectsData: { data }, filter }) => {
+export const ProjectsList = ({
+	allProjectsData: { data: projectsData },
+	projectsLeft: projectsLeftIds,
+	projectsCenter: projectsCenterIds,
+	projectsRight: projectsRightIds,
+	filter,
+}) => {
 	const filteredPortfolio = useMemo(() => {
-		if (filter === 'all') return data;
+		if (filter === 'all') {
+			return [
+				...projectsLeftIds.map(projectId => {
+					return projectsData.find(project => project.ID === projectId);
+				}),
+				...projectsCenterIds.map(projectId => {
+					return projectsData.find(project => project.ID === projectId);
+				}),
+				...projectsRightIds.map(projectId => {
+					return projectsData.find(project => project.ID === projectId);
+				}),
+			];
+		}
 
-		return data.filter(({ categories_slug }) =>
+		return projectsData.filter(({ categories_slug }) =>
 			categories_slug.includes(filter)
 		);
-	}, [filter, data]);
+	}, [
+		filter,
+		projectsCenterIds,
+		projectsData,
+		projectsLeftIds,
+		projectsRightIds,
+	]);
 
 	return (
 		<section className={styles.main}>
