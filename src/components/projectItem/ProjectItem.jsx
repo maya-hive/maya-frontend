@@ -9,6 +9,7 @@ export const ProjectItem = ({
 	title,
 	color,
 	thumbnail,
+	filtred,
 	categories_name,
 }) => {
 	const itemRef = useRef(null);
@@ -34,7 +35,7 @@ export const ProjectItem = ({
 	);
 
 	return (
-		<div className={styles.main}>
+		<div className={` ${styles.main} ${filtred && styles.filtred}`}>
 			<Anchor to={`/portfolio/project/${slug}`} ref={itemRef}>
 				{thumbnail && (
 					<FlexibleMedia

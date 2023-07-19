@@ -4,8 +4,8 @@
 .main {
 	@extend .center-spacing;
 
-	.projectsRow {
-		column-gap: 16px;
+	.filterGrid {
+		column-gap: 25px;
 
 		@include xlScreen {
 			column-count: 3;

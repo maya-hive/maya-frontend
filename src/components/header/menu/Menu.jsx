@@ -2,6 +2,7 @@ import { forwardRef, useEffect, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import { gsap, Power2 } from 'gsap';
 import { bool } from 'prop-types';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
 import styles from './Menu.module.scss';
@@ -12,6 +13,8 @@ export const Menu = forwardRef(({ themeData, isOpen }, ref) => {
 
 	const isHidden = isOpen ? true : false;
 	const tabIndex = isHidden ? 0 : -1;
+
+	const pathName = usePathname();
 
 	let activeStyle = {
 		color: themeData?.theme_appearance_primary,
@@ -56,7 +59,7 @@ export const Menu = forwardRef(({ themeData, isOpen }, ref) => {
 								<Link
 									href={value.page.url}
 									tabIndex={tabIndex}
-									style={({ isActive }) => (isActive ? activeStyle : null)}>
+									style={pathName === value.page.url ? activeStyle : null}>
 									{value.page.title}
 								</Link>
 							</li>

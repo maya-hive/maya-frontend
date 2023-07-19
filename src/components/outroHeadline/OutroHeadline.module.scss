@@ -1,0 +1,38 @@
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
+
+.main {
+	position: relative;
+	text-align: center;
+	padding: 125px 0 150px;
+
+	h2 {
+		margin-bottom: 0;
+		font-size: 94px;
+		font-weight: 900;
+		color: var.$secondary-surface-color;
+
+		strong {
+			text-decoration: none;
+			font-weight: 900;
+			color: var.$primary-color;
+		}
+
+		@include xsScreen {
+			font-size: 42px;
+		}
+
+		@include smScreen {
+			font-size: 58px;
+		}
+
+		@include mdScreen {
+			font-size: 64px;
+		}
+
+		@include lgScreen {
+			font-size: 72px;
+		}
+	}
+}
