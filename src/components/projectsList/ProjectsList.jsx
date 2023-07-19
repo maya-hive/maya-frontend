@@ -35,8 +35,9 @@ export const ProjectsList = ({
 					return projectsData.find(project => project.ID === ID);
 				}
 
-				return projectsData.find(({ categories_slug: category }) =>
-					category.includes(filter)
+				return projectsData.find(
+					({ categories_slug: category }) =>
+						category && category.includes(filter)
 				);
 			}),
 		[filter, projects, projectsData]
@@ -49,8 +50,9 @@ export const ProjectsList = ({
 					return projectsData.find(project => project.ID === ID);
 				}
 
-				return projectsData.filter(({ categories_slug: category }) =>
-					category.includes(filter)
+				return projectsData.filter(
+					({ categories_slug: category }) =>
+						category && category.includes(filter)
 				);
 			}),
 		[filter, projects, projectsData]
@@ -63,8 +65,9 @@ export const ProjectsList = ({
 					return projectsData.find(project => project.ID === ID);
 				}
 
-				return projectsData.filter(({ categories_slug: category }) =>
-					category.includes(filter)
+				return projectsData.filter(
+					({ categories_slug: category }) =>
+						category && category.includes(filter)
 				);
 			}),
 		[filter, projects, projectsData]
