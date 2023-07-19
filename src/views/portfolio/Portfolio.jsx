@@ -7,6 +7,7 @@ import {
 	AnimateWrap,
 	BackgroundTransition,
 	ProjectsFilter,
+	OutroHeadline,
 	ProjectsList,
 	Layout,
 } from '@components';
@@ -53,6 +54,7 @@ export const Portfolio = ({
 							setFilter={setFilter}
 						/>
 					</AnimateWrap>
+					<OutroHeadline content={pageData.portfolio_outro_content} />
 				</BackgroundTransition>
 			</main>
 		</Layout>

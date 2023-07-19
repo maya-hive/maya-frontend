@@ -35,7 +35,7 @@ export const ProjectItem = ({
 	);
 
 	return (
-		<div className={filtred ? styles.filtred : styles.main}>
+		<div className={` ${styles.main} ${filtred && styles.filtred}`}>
 			<Anchor to={`/portfolio/project/${slug}`} ref={itemRef}>
 				{thumbnail && (
 					<FlexibleMedia

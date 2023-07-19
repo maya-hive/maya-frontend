@@ -6,52 +6,24 @@
 	position: relative;
 	margin-bottom: 22px;
 
-	img {
-		max-width: 100%;
-		display: block;
-	}
+	&.filtred {
+		margin: 0;
+		display: grid;
+		grid-template-rows: 1fr auto;
+		margin-bottom: 16px;
+		break-inside: avoid;
 
-	.contentWrap {
-		z-index: 1;
-		position: absolute;
-		padding: 0 30px;
-		opacity: 0;
-
-		@include xsScreen {
-			padding: 0 20px;
-		}
-
-		.category {
-			font-size: 18px;
-			color: var.$primary-color;
-		}
-
-		.title {
-			color: var.$on-secondary-color;
-			font-size: 42px;
+		img {
+			max-width: 100%;
+			display: block;
+			grid-row: 1 / -1;
+			grid-column: 1;
 		}
 	}
-
-	.thumbnail {
-		@extend .full-image;
-		border-radius: 4px;
-		overflow: hidden;
-	}
-}
-
-.filtred {
-	position: relative;
-	margin: 0;
-	display: grid;
-	grid-template-rows: 1fr auto;
-	margin-bottom: 16px;
-	break-inside: avoid;
 
 	img {
 		max-width: 100%;
 		display: block;
-		grid-row: 1 / -1;
-		grid-column: 1;
 	}
 
 	.contentWrap {
