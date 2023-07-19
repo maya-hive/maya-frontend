@@ -22,8 +22,9 @@ export const ProjectsList = ({
 
 	const filteredPortfolio = useMemo(
 		() =>
-			selectedPortfolios.filter(project =>
-				project.categories_slug.includes(filter)
+			selectedPortfolios.filter(
+				project =>
+					project.categories_slug && project.categories_slug.includes(filter)
 			),
 		[filter, selectedPortfolios]
 	);
