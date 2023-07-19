@@ -47,9 +47,7 @@ export const Portfolio = ({
 						/>
 						<ProjectsList
 							allProjectsData={projectsData}
-							projectsLeft={pageData.portfolio_projects_left}
-							projectsCenter={pageData.portfolio_projects_center}
-							projectsRight={pageData.portfolio_projects_right}
+							projects={pageData.portfolio_projects_items}
 							projectCategoriesData={projectCategoriesData}
 							filter={filter}
 							setFilter={setFilter}
