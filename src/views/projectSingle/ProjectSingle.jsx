@@ -70,7 +70,11 @@ export const ProjectSingle = ({
 	}, [active, isHovered, video]);
 
 	return (
-		<Layout themeData={themeData} title={title} meta={meta}>
+		<Layout
+			categories={categories_name}
+			themeData={themeData}
+			title={title}
+			meta={meta}>
 			<main className={styles.main}>
 				<BackgroundTransition>
 					<div
