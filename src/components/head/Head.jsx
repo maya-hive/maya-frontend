@@ -11,8 +11,8 @@ export const Head = props => {
 			return propData.title;
 		}
 
-		return `${props.title} ${props.categories.join(', ') ?? false} ${
-			'by ' + props.sitename ?? false
+		return `${props.title} ${props.categories?.join(', ') ?? 'Project'} ${
+			'by ' + props.sitename ?? ''
 		}`;
 	};
 
