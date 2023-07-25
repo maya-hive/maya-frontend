@@ -3,7 +3,14 @@ import { useEffect, useState } from 'react';
 import { Head, Header, Footer, Favicon, Badge } from '@components';
 import { styleToString } from '@helpers';
 
-export const Layout = ({ headerTheme, themeData, children, title, meta }) => {
+export const Layout = ({
+	headerTheme,
+	categories,
+	themeData,
+	children,
+	title,
+	meta,
+}) => {
 	const [ogImage, setOgImage] = useState();
 
 	useEffect(() => {
@@ -39,6 +46,8 @@ export const Layout = ({ headerTheme, themeData, children, title, meta }) => {
 				data={meta}
 				title={title}
 				ogImagePath={ogImage}
+				sitename={themeData.theme_metadata_sitename}
+				categories={categories}
 				style={styleToString(headerTheme)}
 			/>
 			<Header themeData={themeData} />

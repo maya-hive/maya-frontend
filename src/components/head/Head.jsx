@@ -6,7 +6,15 @@ export const Head = props => {
 
 	const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
 
-	const title = () => (props.title ? props.title : propData.title);
+	const title = () => {
+		if (propData.title) {
+			return propData.title;
+		}
+
+		return `${props.title} ${props.categories?.join(', ') ?? 'Project'} ${
+			'by ' + props.sitename ?? ''
+		}`;
+	};
 
 	const description = () => propData.description;
 
