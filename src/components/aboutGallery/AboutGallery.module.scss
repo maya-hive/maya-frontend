@@ -77,7 +77,7 @@ $galleryMarginTop: 330px;
 				flex-direction: column;
 			}
 
-			h1 {
+			h2 {
 				font-size: 115px;
 				line-height: 1.05;
 				font-weight: 900;
@@ -104,7 +104,7 @@ $galleryMarginTop: 330px;
 			}
 
 			.mdWrap {
-				h1 {
+				h2 {
 					font-size: 86px;
 
 					@include xsScreen {

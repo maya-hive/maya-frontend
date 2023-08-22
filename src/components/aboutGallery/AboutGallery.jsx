@@ -104,26 +104,26 @@ export const AboutGallery = ({ pageData }) => {
 				<div className={styles.headline}>
 					{mdDevice ? (
 						<div className={styles.mdWrap}>
-							<h1>{'Say Hello'}</h1>
+							<h2>{'Say Hello'}</h2>
 							<div className={styles.imgWrap}>
-								<h1 style={{ right: '16px' }}>{'T'}</h1>
+								<h2 style={{ right: '16px' }}>{'T'}</h2>
 								<ImgFrame
 									url={pageData.about_gallery_headlinemedia.url}
 									alt={pageData.about_gallery_headlinemedia.alt}
 									styles={styles.imgFrame}
 								/>
 							</div>
-							<h1>{'Maya'}</h1>
+							<h2>{'Maya'}</h2>
 						</div>
 					) : (
 						<>
-							<h1>{'Say Hello T'}</h1>
+							<h2>{'Say Hello T'}</h2>
 							<ImgFrame
 								url={pageData.about_gallery_headlinemedia.url}
 								alt={pageData.about_gallery_headlinemedia.alt}
 								styles={styles.imgFrame}
 							/>
-							<h1 style={{ left: '32px' }}>{'Maya'}</h1>
+							<h2 style={{ left: '32px' }}>{'Maya'}</h2>
 						</>
 					)}
 				</div>

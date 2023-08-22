@@ -48,7 +48,7 @@ export const CurrentVacancies = ({ pageData, themeData }) => {
 		<section className={styles.main}>
 			<Container>
 				<Overline>{pageData.careers_vacancies_overline}</Overline>
-				<Headline styles={styles.headline}>
+				<Headline styles={styles.headline} div={true}>
 					{pageData.careers_vacancies_headline}
 				</Headline>
 				<Accordion className={styles.accordion}>

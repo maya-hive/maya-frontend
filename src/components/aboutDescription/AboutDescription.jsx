@@ -29,7 +29,7 @@ export const AboutDescription = ({ pageData }) => {
 							<Overline styles={styles.overline}>
 								{pageData.about_description_overline}
 							</Overline>
-							<Headline styles={styles.headline}>
+							<Headline styles={styles.headline} h1={true}>
 								{pageData.about_description_headline}
 							</Headline>
 							<div className={styles.animWrap}>
