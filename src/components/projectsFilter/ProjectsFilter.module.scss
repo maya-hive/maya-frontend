@@ -18,14 +18,21 @@
 	}
 
 	.headline {
-		@include xsScreen {
-			font-size: 48px;
-			line-height: 52px;
-		}
+		h1 {
+			font-size: 72px;
+			font-weight: 900;
+			margin: 0 0 12px;
+			line-height: 70px;
 
-		@include smScreen {
-			font-size: 56px;
-			line-height: 62px;
+			@include xsScreen {
+				font-size: 48px;
+				line-height: 52px;
+			}
+
+			@include smScreen {
+				font-size: 56px;
+				line-height: 62px;
+			}
 		}
 	}
 

@@ -62,7 +62,7 @@ export const ProjectsFilter = ({
 					<Col sm={12} md={12} lg={9}>
 						<div className={styles.typesetWrapper}>
 							<Overline>{pageData.portfolio_filtering_overline}</Overline>
-							<Headline styles={styles.headline} h1={true}>
+							<Headline styles={styles.headline} div={true}>
 								{pageData.portfolio_filtering_headline}
 							</Headline>
 							<Subtitle styles={styles.subtitle}>
