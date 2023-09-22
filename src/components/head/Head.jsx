@@ -1,8 +1,15 @@
 import Meta from 'next/head';
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 
 export const Head = props => {
 	const { data: propData } = props;
+	const router = useRouter();
+
+	const canonicalUrl = (
+		process.env.NEXT_PUBLIC_SITE_URL +
+		(router.asPath === '/' ? '' : router.asPath)
+	).split('?')[0];
 
 	const GTAG_ID = process.env.NEXT_PUBLIC_GTAG_ID;
 
@@ -42,6 +49,8 @@ export const Head = props => {
 				<meta property="twitter:title" content={title()} />
 				<meta property="twitter:description" content={description()} />
 				<meta property="twitter:image" content={image()} />
+
+				<link rel="canonical" href={canonicalUrl} />
 
 				<style>{props.style && `header { ${props.style} }`}</style>
 			</Meta>
