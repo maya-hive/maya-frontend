@@ -1,0 +1,43 @@
+@use 'styles/global/extends' as *;
+@use 'styles/config/variables' as var;
+@use 'styles/config/functions' as *;
+@use 'styles/config/mixins' as *;
+
+.main {
+	.bannerWrap {
+		position: relative;
+
+		h1 {
+			position: relative;
+			color: white;
+			z-index: 1;
+			text-align: center;
+			padding: 150px 0;
+		}
+
+		.media {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	article {
+		@extend .center-spacing;
+
+		.content {
+			color: #fff;
+
+			h3 {
+				font-size: 21px;
+				margin-bottom: 10px;
+			}
+
+			P {
+				color: #fff;
+			}
+		}
+	}
+}

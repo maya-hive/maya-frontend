@@ -8,6 +8,7 @@ export const contact = `${API}/contact`;
 export const careers = `${API}/careers`;
 export const notfound = `${API}/notfound`;
 export const portfolio = `${API}/portfolio`;
+export const privacyPolicy = `${API}/privacy-policy`;
 
 export const projects = `${API}/projects`;
 export const testimonials = `${API}/testimonials`;
