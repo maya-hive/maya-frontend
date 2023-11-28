@@ -2,6 +2,7 @@ import withReactContent from 'sweetalert2-react-content';
 import { CloseButton, Modal } from 'react-bootstrap';
 import { useEffect, useRef, useState } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ErrorMessage } from '@hookform/error-message';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { z } from 'zod';
@@ -33,10 +34,19 @@ export const PopupForm = ({
 	const delay = 2_000;
 
 	const schema = z.object({
-		name: z.string().min(2).max(255),
-		email: z.string().email().min(2).max(255),
-		message: z.string().min(2).max(255),
-		phone: z.string().min(2).max(255),
+		name: z
+			.string()
+			.max(255, 'Name must contain at most 255 characters')
+			.nonempty('Name is required'),
+		email: z.string().email(),
+		message: z
+			.string('message')
+			.max(512, 'Message must contain at most 512 characters')
+			.nonempty('Message is required'),
+		phone: z
+			.string()
+			.max(255, 'Phone must contain at most 255 characters')
+			.nonempty('Phone is required'),
 		context: z.string().min(2).max(255),
 		file: fileInput ? z.string() : z.any(),
 	});
@@ -155,9 +165,11 @@ export const PopupForm = ({
 						placeholder={popupData.name_placeholder}
 						{...register('name', { required: true })}
 					/>
-					{errors.name && (
-						<span className={styles.error}>Name is required</span>
-					)}
+					<ErrorMessage
+						errors={errors}
+						name={'name'}
+						render={({ message }) => <p>{message}</p>}
+					/>
 				</span>
 				<span className={styles.fieldGroup}>
 					<label htmlFor={'email'}>{popupData.email_label}</label>
@@ -167,9 +179,11 @@ export const PopupForm = ({
 						placeholder={popupData.email_placeholder}
 						{...register('email', { required: true })}
 					/>
-					{errors.email && (
-						<span className={styles.error}>Email is required</span>
-					)}
+					<ErrorMessage
+						errors={errors}
+						name={'email'}
+						render={({ message }) => <p>{message}</p>}
+					/>
 				</span>
 				<span className={styles.fieldGroup}>
 					<label htmlFor={'phone'}>{popupData.phone_label}</label>
@@ -179,9 +193,11 @@ export const PopupForm = ({
 						placeholder={popupData.phone_placeholder}
 						{...register('phone', { required: true })}
 					/>
-					{errors.phone && (
-						<span className={styles.error}>Phone is required</span>
-					)}
+					<ErrorMessage
+						errors={errors}
+						name={'phone'}
+						render={({ message }) => <p>{message}</p>}
+					/>
 				</span>
 				{fileInput && (
 					<span className={`${styles.fieldGroup} ${styles.file}`}>
@@ -198,9 +214,11 @@ export const PopupForm = ({
 							onChange={handleFileOnChange}
 							ref={fileInputRef}
 						/>
-						{errors.file && (
-							<span className={styles.error}>CV is required</span>
-						)}
+						<ErrorMessage
+							errors={errors}
+							name={'file'}
+							render={({ message }) => <p>{message}</p>}
+						/>
 					</span>
 				)}
 				<span className={styles.fieldGroup}>
@@ -210,9 +228,11 @@ export const PopupForm = ({
 						rows={'4'}
 						{...register('message', { required: true })}
 					/>
-					{errors.message && (
-						<span className={styles.error}>Message is required</span>
-					)}
+					<ErrorMessage
+						errors={errors}
+						name={'message'}
+						render={({ message }) => <p>{message}</p>}
+					/>
 				</span>
 				<Submit className={styles.button} isLoading={isLoading}>
 					{popupData.submit}
