@@ -12,6 +12,7 @@
 		"lint": "next lint"
 	},
 	"dependencies": {
+		"@hookform/error-message": "^2.0.1",
 		"@hookform/resolvers": "^2.9.11",
 		"chrome-aws-lambda": "^10.1.0",
 		"env-cmd": "^10.1.0",

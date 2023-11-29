@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef, useState } from 'react';
 import withReactContent from 'sweetalert2-react-content';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { ErrorMessage } from '@hookform/error-message';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import { z } from 'zod';
@@ -26,10 +27,19 @@ export const DefaultForm = ({
 	const MySwal = withReactContent(Swal);
 
 	const schema = z.object({
-		name: z.string().min(2).max(255),
-		email: z.string().email().min(2).max(255),
-		message: z.string().min(2).max(255),
-		phone: z.string().min(2).max(255),
+		name: z
+			.string()
+			.max(255, 'Name must contain at most 255 characters')
+			.nonempty('Name is required'),
+		email: z.string().email(),
+		message: z
+			.string('message')
+			.max(512, 'Message must contain at most 512 characters')
+			.nonempty('Message is required'),
+		phone: z
+			.string()
+			.max(255, 'Phone must contain at most 255 characters')
+			.nonempty('Phone is required'),
 		services: z.any(),
 	});
 
@@ -113,7 +123,11 @@ export const DefaultForm = ({
 					{...register('name', { required: true })}
 				/>
 			</span>
-			{errors.name && <span className={styles.error}>Name is required</span>}
+			<ErrorMessage
+				errors={errors}
+				name={'name'}
+				render={({ message }) => <p>{message}</p>}
+			/>
 			<span className={styles.fieldGroup}>
 				<label htmlFor={'email'}>
 					{themeData.theme_general_form.email_label}
@@ -124,7 +138,11 @@ export const DefaultForm = ({
 					{...register('email', { required: true })}
 				/>
 			</span>
-			{errors.email && <span className={styles.error}>Email is required</span>}
+			<ErrorMessage
+				errors={errors}
+				name={'email'}
+				render={({ message }) => <p>{message}</p>}
+			/>
 			<span className={styles.fieldGroup}>
 				<label htmlFor={'phone'}>
 					{themeData.theme_general_form.phone_label}
@@ -134,7 +152,11 @@ export const DefaultForm = ({
 					{...register('phone', { required: true })}
 				/>
 			</span>
-			{errors.phone && <span className={styles.error}>Phone is required</span>}
+			<ErrorMessage
+				errors={errors}
+				name={'phone'}
+				render={({ message }) => <p>{message}</p>}
+			/>
 			{toggleCompatiblities && (
 				<span className={`${styles.fieldGroup} ${styles.compatibilities}`}>
 					<label className={styles.mainLabel}>{labelCompatibilities}</label>
@@ -167,9 +189,11 @@ export const DefaultForm = ({
 					{...register('message', { required: true })}
 				/>
 			</span>
-			{errors.message && (
-				<span className={styles.error}>Message is required</span>
-			)}
+			<ErrorMessage
+				errors={errors}
+				name={'message'}
+				render={({ message }) => <p>{message}</p>}
+			/>
 			<Submit className={styles.button} isLoading={isLoading}>
 				{submitValue}
 			</Submit>
