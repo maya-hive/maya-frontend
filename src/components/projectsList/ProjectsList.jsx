@@ -24,7 +24,7 @@ export const ProjectsList = ({
 		() =>
 			selectedPortfolios.filter(
 				project =>
-					project.categories_slug && project.categories_slug.includes(filter)
+					project?.categories_slug && project.categories_slug.includes(filter)
 			),
 		[filter, selectedPortfolios]
 	);
@@ -82,46 +82,55 @@ export const ProjectsList = ({
 						<Col lg={4}>
 							{projectsColLeft &&
 								projectsColLeft.map(
-									({ ID, title, color, thumbnail, slug, categories_name }) => (
-										<ProjectItem
-											key={ID}
-											slug={slug}
-											title={title}
-											color={color}
-											thumbnail={thumbnail}
-											categories_name={categories_name || 'uncategorized'}
-										/>
-									)
+									project =>
+										project && (
+											<ProjectItem
+												key={project.ID}
+												slug={project.slug}
+												title={project.title}
+												color={project.color}
+												thumbnail={project.thumbnail}
+												categories_name={
+													project.categories_name || 'uncategorized'
+												}
+											/>
+										)
 								)}
 						</Col>
 						<Col lg={4}>
 							{projectsColCenter &&
 								projectsColCenter.map(
-									({ ID, title, color, thumbnail, slug, categories_name }) => (
-										<ProjectItem
-											key={ID}
-											slug={slug}
-											title={title}
-											color={color}
-											thumbnail={thumbnail}
-											categories_name={categories_name || 'uncategorized'}
-										/>
-									)
+									project =>
+										project && (
+											<ProjectItem
+												key={project.ID}
+												slug={project.slug}
+												title={project.title}
+												color={project.color}
+												thumbnail={project.thumbnail}
+												categories_name={
+													project.categories_name || 'uncategorized'
+												}
+											/>
+										)
 								)}
 						</Col>
 						<Col lg={4}>
 							{projectsColRight &&
 								projectsColRight.map(
-									({ ID, title, color, thumbnail, slug, categories_name }) => (
-										<ProjectItem
-											key={ID}
-											slug={slug}
-											title={title}
-											color={color}
-											thumbnail={thumbnail}
-											categories_name={categories_name || 'uncategorized'}
-										/>
-									)
+									project =>
+										project && (
+											<ProjectItem
+												key={project.ID}
+												slug={project.slug}
+												title={project.title}
+												color={project.color}
+												thumbnail={project.thumbnail}
+												categories_name={
+													project.categories_name || 'uncategorized'
+												}
+											/>
+										)
 								)}
 						</Col>
 					</Row>
