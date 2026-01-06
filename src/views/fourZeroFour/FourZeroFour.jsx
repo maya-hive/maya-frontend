@@ -5,9 +5,9 @@ export const FourZeroFour = ({ pageData, themeData, ogImagePath }) => (
 	<Layout
 		ogImagePath={ogImagePath}
 		themeData={themeData}
-		meta={pageData.meta}
+		meta={pageData?.meta}
 		headerTheme={
-			pageData.notfound_appearance_navbtnsecondary ? headerTheme : undefined
+			pageData?.notfound_appearance_navbtnsecondary ? headerTheme : undefined
 		}>
 		<NotFound pageData={pageData} />
 	</Layout>
