@@ -1,7 +1,7 @@
 import { Container, Row, Col } from 'react-bootstrap';
 
 import styles from './Footer.module.scss';
-import { Address, Nav, Small } from './index';
+import { Address, NavFooter, Small } from './index';
 import { Form } from '@components';
 
 export const Footer = ({ themeData }) => {
@@ -12,8 +12,8 @@ export const Footer = ({ themeData }) => {
 					<Col sm={12} md={12} lg={5}>
 						<Form
 							themeData={themeData}
-							headline={themeData.theme_footer_form}
-							submitValue={themeData.theme_footer_submit}
+							headline={themeData?.theme_footer_form}
+							submitValue={themeData?.theme_footer_submit}
 							className={styles.form}
 						/>
 					</Col>
@@ -21,7 +21,7 @@ export const Footer = ({ themeData }) => {
 						<Address themeData={themeData} />
 					</Col>
 					<Col sm={12} md={6} lg={4}>
-						<Nav themeData={themeData} />
+						<NavFooter themeData={themeData} />
 					</Col>
 				</Row>
 				<hr />

@@ -5,7 +5,7 @@ import { gsap } from 'gsap/all';
 import styles from './AboutDescription.module.scss';
 import { FlexibleMedia, Headline, Overline, Subtitle } from '@components';
 import { useMediaQuery } from '@hooks';
-import { animation } from './index';
+import { animationAbout } from './index';
 
 export const AboutDescription = ({ pageData }) => {
 	const animTitlesRef = useRef(null);
@@ -15,7 +15,7 @@ export const AboutDescription = ({ pageData }) => {
 	useEffect(() => {
 		let tl = gsap.timeline({ repeat: -1 });
 
-		animation(smDevice, tl, animTitlesRef);
+		animationAbout(smDevice, tl, animTitlesRef);
 
 		return () => tl.kill();
 	}, [animTitlesRef, smDevice]);

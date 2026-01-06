@@ -5,29 +5,33 @@ export const Address = ({ themeData }) => {
 	let append = ':';
 	return (
 		<address className={styles.main}>
-			<h3>{themeData.theme_footer_contact}</h3>
+			<h3>{themeData?.theme_footer_contact}</h3>
 			<div>
-				<h4>{themeData.theme_footer_telephone + append}</h4>
-				<ul>
-					{themeData.theme_general_telephone.map(({ number }, index) => (
-						<li key={index}>
-							<Anchor href={`tel:${number}`}>{number}</Anchor>
-						</li>
-					))}
-				</ul>
+				<h4>{themeData?.theme_footer_telephone + append}</h4>
+				{themeData?.theme_general_telephone && (
+					<ul>
+						{themeData?.theme_general_telephone.map(({ number }, index) => (
+							<li key={index}>
+								<Anchor href={`tel:${number}`}>{number}</Anchor>
+							</li>
+						))}
+					</ul>
+				)}
 			</div>
 			<div>
-				<h4>{themeData.theme_footer_email + append}</h4>
-				<ul>
-					{themeData.theme_general_email.map(({ email }, index) => (
-						<li key={index}>
-							<Anchor href={`mailto:${email}`}>{email}</Anchor>
-						</li>
-					))}
-				</ul>
+				<h4>{themeData?.theme_footer_email + append}</h4>
+				{themeData?.theme_general_email && (
+					<ul>
+						{themeData?.theme_general_email.map(({ email }, index) => (
+							<li key={index}>
+								<Anchor href={`mailto:${email}`}>{email}</Anchor>
+							</li>
+						))}
+					</ul>
+				)}
 			</div>
 			<div>
-				<h4>{themeData.theme_footer_address + append}</h4>
+				<h4>{themeData?.theme_footer_address + append}</h4>
 				<Anchor
 					href={`https://www.google.com/maps/search/${themeData.theme_general_address.replace(
 						/<[^>]*>?/gm,

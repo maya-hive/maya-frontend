@@ -100,7 +100,7 @@ export const InquiryForm = ({ pageData, themeData }) => {
 									target={'_blank'}>
 									<p
 										dangerouslySetInnerHTML={{
-											__html: themeData.theme_general_address,
+											__html: themeData?.theme_general_address,
 										}}
 									/>
 								</Anchor>
@@ -108,7 +108,7 @@ export const InquiryForm = ({ pageData, themeData }) => {
 							<div className={styles.telephone}>
 								<h3>{pageData.contact_form_infotelephone}</h3>
 								<ul>
-									{themeData.theme_general_telephone.map(
+									{themeData?.theme_general_telephone.map(
 										({ name, number }, index) => (
 											<li key={index}>
 												<Anchor href={`tel:${number}`}>
@@ -122,7 +122,7 @@ export const InquiryForm = ({ pageData, themeData }) => {
 							<div className={styles.email}>
 								<h3>{pageData.contact_form_infoemail}</h3>
 								<ul>
-									{themeData.theme_general_email.map(({ email }, index) => (
+									{themeData?.theme_general_email.map(({ email }, index) => (
 										<li key={index}>
 											<Anchor href={`mailto:${email}`}>{email}</Anchor>
 										</li>
@@ -130,7 +130,7 @@ export const InquiryForm = ({ pageData, themeData }) => {
 								</ul>
 							</div>
 							<ul className={styles.socials}>
-								{themeData.theme_general_socials.map(
+								{themeData?.theme_general_socials.map(
 									({ name, icon, url }, index) => (
 										<li key={index}>
 											<Button

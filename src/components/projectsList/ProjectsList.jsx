@@ -12,7 +12,7 @@ export const ProjectsList = ({
 	projects,
 	filter,
 }) => {
-	const selectedPortfolios = projects.flatMap(obj =>
+	const selectedPortfolios = projects && projects.flatMap(obj =>
 		Object.values(obj).map(projectID => {
 			return projectsData.find(project => {
 				return project.ID === projectID;
@@ -22,7 +22,7 @@ export const ProjectsList = ({
 
 	const filteredPortfolio = useMemo(
 		() =>
-			selectedPortfolios.filter(
+			selectedPortfolios && selectedPortfolios.filter(
 				project =>
 					project?.categories_slug && project.categories_slug.includes(filter)
 			),
@@ -31,7 +31,7 @@ export const ProjectsList = ({
 
 	const projectsColLeft = useMemo(
 		() =>
-			projects.map(({ col_left: ID }) => {
+			projects && projects.map(({ col_left: ID }) => {
 				if (filter === 'all') {
 					return projectsData.find(project => project.ID === ID);
 				}
@@ -46,7 +46,7 @@ export const ProjectsList = ({
 
 	const projectsColCenter = useMemo(
 		() =>
-			projects.map(({ col_center: ID }) => {
+			projects && projects.map(({ col_center: ID }) => {
 				if (filter === 'all') {
 					return projectsData.find(project => project.ID === ID);
 				}
@@ -61,7 +61,7 @@ export const ProjectsList = ({
 
 	const projectsColRight = useMemo(
 		() =>
-			projects.map(({ col_right: ID }) => {
+			projects && projects.map(({ col_right: ID }) => {
 				if (filter === 'all') {
 					return projectsData.find(project => project.ID === ID);
 				}

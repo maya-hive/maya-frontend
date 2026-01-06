@@ -53,24 +53,26 @@ export const BannerHome = ({ pageData, themeData }) => {
 									{pageData.home_banner_spinner}
 								</TextSpinner>
 							</Col>
-							<Col>
-								<div className={styles.socialsList}>
-									<ul>
-										{themeData.theme_general_socials
-											.slice(0, 3)
-											.map(({ name, url }, index) => (
-												<li key={index}>
-													<Anchor
-														href={url}
-														target={'_blank'}
-														rel={'noreferrer'}>
-														{name}
-													</Anchor>
-												</li>
-											))}
-									</ul>
-								</div>
-							</Col>
+							{themeData?.theme_general_socials && (
+								<Col>
+									<div className={styles.socialsList}>
+										<ul>
+											{themeData?.theme_general_socials
+												.slice(0, 3)
+												.map(({ name, url }, index) => (
+													<li key={index}>
+														<Anchor
+															href={url}
+															target={'_blank'}
+															rel={'noreferrer'}>
+															{name}
+														</Anchor>
+													</li>
+												))}
+										</ul>
+									</div>
+								</Col>
+							)}
 						</Row>
 					</div>
 				)}

@@ -86,8 +86,8 @@ export const ProjectsSlider = ({ pageData, projectsData }) => {
 						<Subtitle styles={styles.subtitle}>
 							{pageData.home_portfolio_subtitle}
 						</Subtitle>
-						<Button to={pageData.home_portfolio_cta.url} styles={styles.button}>
-							{pageData.home_portfolio_cta.title}
+						<Button to={pageData?.home_portfolio_cta?.url} styles={styles.button}>
+							{pageData?.home_portfolio_cta?.title}
 						</Button>
 					</Col>
 				</Row>
@@ -115,8 +115,8 @@ export const ProjectsSlider = ({ pageData, projectsData }) => {
 					</Carousel>
 				</div>
 				<div className={styles.textSpinner}>
-					<TextSpinner to={pageData.home_portfolio_link.url} secondary={'true'}>
-						{pageData.home_portfolio_link.title}
+					<TextSpinner to={pageData?.home_portfolio_link?.url} secondary={'true'}>
+						{pageData?.home_portfolio_link?.title}
 					</TextSpinner>
 				</div>
 			</Container>
