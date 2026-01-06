@@ -1,0 +1,41 @@
+@use 'styles/config/variables' as var;
+@use 'styles/global/extends' as *;
+@use 'styles/config/mixins' as *;
+
+.main {
+	position: relative;
+	margin-bottom: 22px;
+
+
+	img {
+		max-width: 100%;
+		display: block;
+	}
+
+	.contentWrap {
+		z-index: 1;
+		position: absolute;
+		padding: 0 30px;
+		opacity: 0;
+
+		@include xsScreen {
+			padding: 0 20px;
+		}
+
+		.category {
+			font-size: 18px;
+			color: var.$primary-color;
+		}
+
+		.title {
+			color: var.$on-secondary-color;
+			font-size: 42px;
+		}
+	}
+
+	.thumbnail {
+		@extend .full-image;
+		border-radius: 4px;
+		overflow: hidden;
+	}
+}

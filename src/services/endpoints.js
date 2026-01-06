@@ -9,15 +9,18 @@ export const careers = `${API}/careers`;
 export const notfound = `${API}/notfound`;
 export const portfolio = `${API}/portfolio`;
 export const privacyPolicy = `${API}/privacy-policy`;
+export const caseStudies = `${API}/case-studies`;
 
 export const projects = `${API}/projects`;
 export const testimonials = `${API}/testimonials`;
 export const compatibilities = `${API}/compatibilities`;
 export const projectCategories = `${API}/project-categories`;
 export const projectTechnologies = `${API}/project-technologies`;
+export const caseStudyData = `${API}/studies`;
 
 export const enquiry = `${API}/inquiry`;
 export const careersApplication = `${API}/careers-application`;
 export const compatibilitiesApplication = `${API}/compatibilities-application`;
 export const projectSingle = `${API}/project?slug=`;
 export const ogImage = `${API}/og-image`;
+export const caseStudySingle = `${API}/casestudy?slug=`;
