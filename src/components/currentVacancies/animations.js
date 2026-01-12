@@ -1,6 +1,6 @@
 import { gsap, Power2, Power3, Power4 } from 'gsap/all';
 
-export const animations = (
+export const animationsCurrentVacancies = (
 	isOpen,
 	itemHeadlineRef,
 	itemDescriptionRef,

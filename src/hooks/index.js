@@ -8,3 +8,4 @@ export * from './useScrollBlock';
 export * from './useCursorHandlers';
 export * from './useHover';
 export * from './useIsomorphicLayoutEffect';
+export * from './useFancybox';

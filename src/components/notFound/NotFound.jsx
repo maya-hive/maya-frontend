@@ -70,17 +70,17 @@ export const NotFound = ({ pageData }) => {
 						<Col sm={12} md={12} lg={6}>
 							<div className={styles.textWrapper}>
 								<ImgFrame
-									url={pageData.notfound_main_img}
-									alt={pageData.notfound_main_alt}
+									url={pageData?.notfound_main_img}
+									alt={pageData?.notfound_main_alt}
 									styles={styles.imgWrap}
 								/>
 								<div className={styles.content}>
 									<span
 										dangerouslySetInnerHTML={{
-											__html: pageData.notfound_main_description,
+											__html: pageData?.notfound_main_description,
 										}}></span>
 									<Button styles={styles.button} to={'/'}>
-										{pageData.notfound_main_button.title}
+										{pageData?.notfound_main_button?.title}
 									</Button>
 								</div>
 							</div>
@@ -89,7 +89,7 @@ export const NotFound = ({ pageData }) => {
 				</div>
 				<div
 					className={styles.backgroundImg}
-					style={{ backgroundImage: `url(${pageData.notfound_main_bgimg})` }}
+					style={{ backgroundImage: `url(${pageData?.notfound_main_bgimg})` }}
 				/>
 			</Container>
 		</section>

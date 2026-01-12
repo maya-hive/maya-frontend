@@ -111,7 +111,7 @@ export const Compatibilities = ({ pageData, themeData }) => {
 						<Col xs={12} sm={12} md={4} lg={2}>
 							<div className={styles.imageContainer}>
 								{pageData.home_compatibilities_type !== 'animation' &&
-								pageData.home_compatibilities_img ? (
+									pageData.home_compatibilities_img ? (
 									<ImgFrame
 										url={pageData.home_compatibilities_img}
 										alt={pageData.home_banner_media_alt}
@@ -152,7 +152,7 @@ export const Compatibilities = ({ pageData, themeData }) => {
 				</div>
 				<div className={styles.cardsWrapper}>
 					<Row>
-						{pageData.home_compatibilities_cards.map(
+						{pageData?.home_compatibilities_cards && pageData?.home_compatibilities_cards.map(
 							({ img, headline, subheadline, body, call_to_action }, index) => (
 								<Fragment key={index}>
 									<Card

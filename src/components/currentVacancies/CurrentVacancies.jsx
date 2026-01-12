@@ -2,7 +2,7 @@ import { Container, Accordion } from 'react-bootstrap';
 import { useEffect, useRef, useState } from 'react';
 
 import styles from './CurrentVacancies.module.scss';
-import { animations, SubmitBtn } from './index';
+import { animationsCurrentVacancies, SubmitBtn } from './index';
 import { FlexibleMedia, Form, Headline, Overline, Subtitle } from '@components';
 import { useCursorHandlers, useMediaQuery } from '@hooks';
 import { careersApplication } from '@services';
@@ -21,7 +21,7 @@ export const CurrentVacancies = ({ pageData, themeData }) => {
 	const cursorHandlers = useCursorHandlers();
 
 	useEffect(() => {
-		animations(
+		animationsCurrentVacancies(
 			isOpen,
 			itemHeadlineRef,
 			itemDescriptionRef,

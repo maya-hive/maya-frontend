@@ -1,6 +1,6 @@
 import { Expo } from 'gsap/all';
 
-export const animation = (smDevice, tl, animTitlesRef) => {
+export const animationAbout = (smDevice, tl, animTitlesRef) => {
 	const animTitlesElems = animTitlesRef.current;
 	if (smDevice) {
 		tl.fromTo(

@@ -11,16 +11,16 @@ export const InBritain = ({ pageData }) => (
 					<FlexibleMedia
 						loop
 						styles={styles.imageFrame}
-						url={pageData.home_britain_media.url}
-						alt={pageData.home_britain_media.alt}
-						poster={pageData.home_britain_fallback}
+						url={pageData?.home_britain_media?.url}
+						alt={pageData?.home_britain_media?.alt}
+						poster={pageData?.home_britain_fallback}
 					/>
 				</Col>
 				<Col lg={6}>
 					<div
 						className={styles.content}
 						dangerouslySetInnerHTML={{
-							__html: pageData.home_britain_body,
+							__html: pageData?.home_britain_body,
 						}}
 					/>
 				</Col>

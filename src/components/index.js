@@ -50,3 +50,4 @@ export * from './navLink';
 export * from './layout';
 export * from './badge';
 export * from './outroHeadline';
+export * from './caseStudyItem';
