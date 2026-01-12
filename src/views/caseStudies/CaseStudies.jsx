@@ -20,8 +20,8 @@ export const CaseStudies = ({
 	const mdDevice = useMediaQuery('(max-width: 768px)');
 
 	useEffect(() => {
-		particleConfig.imageUrl = pageData.casestudy_bg_img;
-		particleConfig.color = pageData.casestudy_bg_color;
+		particleConfig.imageUrl = pageData?.casestudy_bg_img;
+		particleConfig.color = pageData?.casestudy_bg_color;
 
 		if (!mdDevice) {
 			new Sparticles(particleConfig, 1920, 1080);
@@ -34,7 +34,7 @@ export const CaseStudies = ({
 	}, [mdDevice, pageData]);
 
 	return (
-		<Layout themeData={themeData} meta={pageData.meta}>
+		<Layout themeData={themeData} meta={pageData?.meta}>
 			<main>
 				{caseStudiesData?.data?.length > 0 && (
 					<BackgroundTransition>
