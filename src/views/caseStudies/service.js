@@ -6,15 +6,15 @@ import {
 } from '@services';
 
 export const getStaticProps = async () => {
-	const { response: pageData } = await fetchData(caseStudies);
-	const { response: themeData } = await fetchData(theme);
-	const { response: caseStudiesData } = await fetchData(caseStudyData);
+	const { response: pageData } = await fetchData(caseStudies) || {};
+	const { response: themeData } = await fetchData(theme) || {};
+	const { response: caseStudiesData } = await fetchData(caseStudyData) || {};
 
 	return {
 		props: {
-			pageData,
-			themeData,
-			caseStudiesData,
+			pageData: pageData ?? null,
+			themeData: themeData ?? null,
+			caseStudiesData: caseStudiesData ?? null,
 		},
 	};
 };
