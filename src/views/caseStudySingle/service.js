@@ -20,7 +20,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
 	const { response: themeData } = themeResult || {};
 
 	return {
-		props: { caseStudies, themeData },
+		props: { caseStudies: caseStudies ?? null, themeData: themeData ?? null },
 	};
 };
 

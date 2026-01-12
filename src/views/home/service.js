@@ -8,19 +8,19 @@ import {
 } from '@services';
 
 export const getStaticProps = async () => {
-	const { response: pageData } = await fetchData(home);
-	const { response: themeData } = await fetchData(theme);
-	const { response: clientsData } = await fetchData(clients);
-	const { response: projectsData } = await fetchData(projects);
-	const { response: testimonialsData } = await fetchData(testimonials);
+	const { response: pageData } = await fetchData(home) || {};
+	const { response: themeData } = await fetchData(theme) || {};
+	const { response: clientsData } = await fetchData(clients) || {};
+	const { response: projectsData } = await fetchData(projects) || {};
+	const { response: testimonialsData } = await fetchData(testimonials) || {};
 
 	return {
 		props: {
-			pageData,
-			themeData,
-			clientsData,
-			projectsData,
-			testimonialsData,
+			pageData: pageData ?? null,
+			themeData: themeData ?? null,
+			clientsData: clientsData ?? null,
+			projectsData: projectsData ?? null,
+			testimonialsData: testimonialsData ?? null,
 		},
 	};
 };
