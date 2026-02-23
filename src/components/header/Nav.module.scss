@@ -27,22 +27,15 @@
 			height: 80px;
 
 			@include smScreen {
-				margin-top: 0.5rem;
 				width: 35%;
 			}
 
 			@include mdScreen {
-				margin-top: 0.5rem;
 				width: 30%;
 			}
 
 			@include lgScreen {
-				margin-top: 1rem;
 				width: 20%;
-			}
-
-			@include xlScreen {
-				margin-top: 1rem;
 			}
 
 			img {
